@@ -1,0 +1,48 @@
+version: '3.7'
+
+services:
+  api:
+    image: docker.pkg.github.com/ciffelia/twilens/api
+    build:
+      context: .
+      dockerfile: ./dockerfile/api.dockerfile
+    init: true
+    depends_on:
+      - elasticsearch
+    environment:
+      PORT: 8080
+      TWILENS_ELASTICSEARCH_NODE: http://elasticsearch:9200
+    expose:
+      - 8080
+
+  web:
+    image: docker.pkg.github.com/ciffelia/twilens/web
+    build:
+      context: .
+      dockerfile: ./dockerfile/web.dockerfile
+    init: true
+    environment:
+      PORT: 3000
+      TWILENS_API_BASE_URL_SERVER: http://api:8080
+
+  elasticsearch:
+    image: docker.pkg.github.com/ciffelia/twilens/elasticsearch
+    build:
+      context: .
+      dockerfile: ./dockerfile/elasticsearch.dockerfile
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    environment:
+      - discovery.type=single-node
+      - cluster.name=docker-cluster
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms256m -Xmx256m"
+    expose:
+      - 9200
+    volumes:
+      - elasticsearch-data:/usr/share/elasticsearch/data
+
+volumes:
+  elasticsearch-data:

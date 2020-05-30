@@ -1,0 +1,15 @@
+{
+  "name": "@twilens/types",
+  "private": true,
+  "version": "0.0.1",
+  "description": "TypeScript interfaces for twilens",
+  "author": "Ciffelia <mc.prince.0203@gmail.com> (https://ciffelia.com/)",
+  "repository": "github:ciffelia/twilens",
+  "homepage": "https://github.com/ciffelia/twilens#readme",
+  "bugs": "https://github.com/ciffelia/twilens/issues",
+  "scripts": {
+    "build": "tsc"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts"
+}

@@ -1,0 +1,5 @@
+export { SearchMode } from './SearchMode'
+export { SearchDisplayOptions } from './SearchDisplayOptions'
+export { SearchOptions } from './SearchOptions'
+export { TweetRecord } from './TweetRecord'
+export { SearchResult } from './SearchResult'

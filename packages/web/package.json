@@ -1,0 +1,32 @@
+{
+  "name": "@twilens/web",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Web front-end of twilens.",
+  "author": "Ciffelia <mc.prince.0203@gmail.com> (https://ciffelia.com/)",
+  "repository": "github:ciffelia/twilens",
+  "homepage": "https://github.com/ciffelia/twilens#readme",
+  "bugs": "https://github.com/ciffelia/twilens/issues",
+  "scripts": {
+    "dev": "nuxt-ts",
+    "build": "nuxt-ts build",
+    "start": "nuxt-ts start"
+  },
+  "dependencies": {
+    "@nuxt/typescript-runtime": "^0.4.8",
+    "@nuxtjs/axios": "^5.10.3",
+    "@nuxtjs/pwa": "^3.0.0-0",
+    "@twilens/tweetjs-parser": "^0.0.1",
+    "@twilens/types": "^0.0.1",
+    "luxon": "^1.24.1",
+    "nuxt": "^2.12.2",
+    "nuxt-property-decorator": "^2.7.2"
+  },
+  "devDependencies": {
+    "@nuxt/typescript-build": "^1.0.1",
+    "@nuxtjs/eslint-config-typescript": "^2.0.0",
+    "@nuxtjs/vuetify": "^1.11.2",
+    "@types/luxon": "^1.24.0",
+    "eslint-plugin-nuxt": "^0.5.2"
+  }
+}

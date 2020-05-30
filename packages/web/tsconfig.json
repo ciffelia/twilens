@@ -1,0 +1,45 @@
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "es2019",
+    "module": "esnext",
+    "lib": [
+      "esnext",
+      "dom"
+    ],
+    "sourceMap": true,
+    "noEmit": true,
+    
+    /* Strict Type-Checking Options */
+    "strict": true,
+    
+    /* Module Resolution Options */
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "~/*": [
+        "./*"
+      ]
+    },
+    "types": [
+      "@types/node",
+      "@nuxt/types",
+      "@nuxtjs/vuetify",
+      "@nuxtjs/axios"
+    ],
+    "esModuleInterop": true,
+  
+    /* Experimental Options */
+    "experimentalDecorators": true,
+  
+    /* Advanced Options */
+    "forceConsistentCasingInFileNames": true
+  },
+  
+  "include": [
+    "./@types/**/*",
+    "./components/**/*",
+    "./layouts/**/*",
+    "./pages/**/*"
+  ]
+}

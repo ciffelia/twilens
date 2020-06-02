@@ -65,6 +65,7 @@ const config: Configuration = {
   ** Nuxt.js modules
   */
   modules: [
+    'nuxt-client-init-module',
     '@nuxtjs/axios',
     '@nuxtjs/pwa'
   ],
@@ -74,8 +75,6 @@ const config: Configuration = {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: process.env.TWILENS_API_BASE_URL_SERVER,
-    browserBaseURL: process.env.TWILENS_API_BASE_URL_BROWSER
   },
 
   /*

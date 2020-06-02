@@ -8150,6 +8150,11 @@ number-is-nan@^1.0.0:
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
+nuxt-client-init-module@^0.1.8:
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/nuxt-client-init-module/-/nuxt-client-init-module-0.1.8.tgz#6b8fabdf0ff4d5f2f4ec72df2dab553d9a331c92"
+  integrity sha512-pHswEnDSc2JxC57XsPK8dPPbUeHHe3u56zb/Lt2CihkVo5NsuLjGVPLFBbKMVaqRCIwvhbmik6wXHOSPJdpJbA==
+
 nuxt-property-decorator@^2.7.2:
   version "2.7.2"
   resolved "https://registry.yarnpkg.com/nuxt-property-decorator/-/nuxt-property-decorator-2.7.2.tgz#c465d9fe10db3c11911c94ca9b10dbcd068e0149"

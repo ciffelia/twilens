@@ -18,17 +18,10 @@ const tweetsIndex = {
             'digit'
           ]
         },
-        sudachi_normal_tokenizer: {
+        configured_sudachi_tokenizer: {
           type: 'sudachi_tokenizer',
-          mode: 'normal',
-          settings_path: './sudachi_tokenizer/settings.json',
-          resources_path: './sudachi_tokenizer'
-        },
-        sudachi_search_tokenizer: {
-          type: 'sudachi_tokenizer',
-          mode: 'search',
-          settings_path: './sudachi_tokenizer/settings.json',
-          resources_path: './sudachi_tokenizer'
+          settings_path: './sudachi/settings.json',
+          resources_path: './sudachi'
         }
       },
       analyzer: {
@@ -42,8 +35,9 @@ const tweetsIndex = {
         },
         search_sudachi_analyzer: {
           type: 'custom',
-          tokenizer: 'sudachi_search_tokenizer',
+          tokenizer: 'configured_sudachi_tokenizer',
           filter: [
+            'sudachi_split',
             'sudachi_part_of_speech',
             'sudachi_ja_stop',
             'sudachi_normalizedform'
@@ -54,7 +48,7 @@ const tweetsIndex = {
           char_filter: [
             'url_strip_char_filter'
           ],
-          tokenizer: 'sudachi_normal_tokenizer',
+          tokenizer: 'configured_sudachi_tokenizer',
           filter: [
             'sudachi_part_of_speech',
             'sudachi_ja_stop',

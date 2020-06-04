@@ -7,7 +7,7 @@ export default fp((server, options, next) => {
       index: 'tweets',
       body: request.body
     }, {
-      requestTimeout: Infinity
+      requestTimeout: '1h'
     })
 
     reply.send()

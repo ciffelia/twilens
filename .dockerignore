@@ -1,5 +1,7 @@
 .git/
 
+###
+
 # Logs
 **/logs
 **/*.log
@@ -106,3 +108,7 @@
 **/.tern-port
 
 .idea
+
+###
+
+.github

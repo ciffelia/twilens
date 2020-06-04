@@ -1,5 +1,9 @@
 <template>
-  <v-dialog v-model="dialog" max-width="300">
+  <v-dialog
+    v-model="dialog"
+    max-width="300"
+    :persistent="resetting"
+  >
     <template v-slot:activator="{ on }">
       <v-btn large color="error" v-on="on">
         Reset data

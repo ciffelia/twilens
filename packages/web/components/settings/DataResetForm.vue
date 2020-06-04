@@ -17,7 +17,7 @@
         <v-spacer />
         <v-btn
           text
-          :disabled="loading"
+          :disabled="resetting"
           @click="dialog = false"
         >
           Cancel
@@ -25,8 +25,8 @@
         <v-btn
           color="error"
           text
-          :loading="loading"
-          :disabled="loading"
+          :loading="resetting"
+          :disabled="resetting"
           @click="reset"
         >
           Reset
@@ -42,18 +42,18 @@ import { Vue, Component } from 'nuxt-property-decorator'
 @Component
 export default class DataResetForm extends Vue {
   dialog: boolean = false
-  loading: boolean = false
+  resetting: boolean = false
 
   closeDialog () {
     this.dialog = false
   }
 
   async reset () {
-    this.loading = true
+    this.resetting = true
 
     await this.$axios.post('/reset')
 
-    this.loading = false
+    this.resetting = false
     this.dialog = false
   }
 }

@@ -6,6 +6,9 @@ services:
     build:
       context: .
       dockerfile: ./dockerfile/api.dockerfile
+      cache_from:
+        - docker.pkg.github.com/ciffelia/twilens/api
+        - docker.pkg.github.com/ciffelia/twilens/web
     init: true
     depends_on:
       - elasticsearch
@@ -20,6 +23,9 @@ services:
     build:
       context: .
       dockerfile: ./dockerfile/web.dockerfile
+      cache_from:
+        - docker.pkg.github.com/ciffelia/twilens/web
+        - docker.pkg.github.com/ciffelia/twilens/api
     init: true
     environment:
       PORT: 3000
@@ -30,6 +36,8 @@ services:
     build:
       context: .
       dockerfile: ./dockerfile/elasticsearch.dockerfile
+      cache_from:
+        - docker.pkg.github.com/ciffelia/twilens/elasticsearch
     ulimits:
       memlock:
         soft: -1

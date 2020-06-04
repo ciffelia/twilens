@@ -35,6 +35,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: echo "${GITHUB_TOKEN}" | docker login docker.pkg.github.com --username ciffelia --password-stdin
-      - name: Push Docker image
+      - name: Push Docker images
         if: github.ref == 'refs/heads/master'
         run: docker-compose push

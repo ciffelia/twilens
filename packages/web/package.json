@@ -15,11 +15,11 @@
   "dependencies": {
     "@nuxt/typescript-runtime": "^0.4.8",
     "@nuxtjs/axios": "^5.10.3",
+    "@nuxtjs/proxy": "^2.0.0",
     "@twilens/tweetjs-parser": "^0.0.1",
     "@twilens/types": "^0.0.1",
     "luxon": "^1.24.1",
     "nuxt": "^2.12.2",
-    "nuxt-client-init-module": "^0.1.8",
     "nuxt-property-decorator": "^2.7.2"
   },
   "devDependencies": {

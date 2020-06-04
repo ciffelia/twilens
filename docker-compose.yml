@@ -23,7 +23,7 @@ services:
     init: true
     environment:
       PORT: 3000
-      TWILENS_API_BASE_URL_SERVER: http://api:8080
+      TWILENS_API_BASE_URL: http://api:8080
 
   elasticsearch:
     image: docker.pkg.github.com/ciffelia/twilens/elasticsearch

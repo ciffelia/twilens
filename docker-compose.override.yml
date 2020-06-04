@@ -2,14 +2,10 @@ version: '3.7'
 
 services:
   api:
-    environment:
-      TWILENS_CORS_ORIGIN: http://localhost:3000
     ports:
       - '8080:8080'
 
   web:
-    environment:
-      TWILENS_API_BASE_URL_BROWSER: http://localhost:8080
     ports:
       - '3000:3000'
 

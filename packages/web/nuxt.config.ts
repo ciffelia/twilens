@@ -66,8 +66,8 @@ const config: Configuration = {
   ** Nuxt.js modules
   */
   modules: [
-    'nuxt-client-init-module',
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
   ],
 
   /*
@@ -75,6 +75,18 @@ const config: Configuration = {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    proxy: true,
+    prefix: '/api'
+  },
+
+  proxy: {
+    '/api': {
+      // Set dummy url to avoid build error
+      target: process.env.TWILENS_API_BASE_URL ?? 'https://dummy-proxy-target.example.com',
+      pathRewrite: {
+        '^/api': ''
+      }
+    }
   },
 
   /*

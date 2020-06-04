@@ -1917,6 +1917,14 @@
     consola "^2.5.6"
     http-proxy-middleware "^0.19.1"
 
+"@nuxtjs/proxy@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/proxy/-/proxy-2.0.0.tgz#cf19894eac721a2ad896293f241371f046db71e7"
+  integrity sha512-ewiOLAhfQlE/QWiQkHH0MQBYrtTRRSuz5SqDly1Zy/M3cN9bxqWd9d5Ty/GnU3nLtwsfW64TrRKuTw8/gT1nFQ==
+  dependencies:
+    consola "^2.11.3"
+    http-proxy-middleware "^1.0.4"
+
 "@nuxtjs/pwa@^3.0.0-0":
   version "3.0.0-beta.20"
   resolved "https://registry.yarnpkg.com/@nuxtjs/pwa/-/pwa-3.0.0-beta.20.tgz#56766da5485c09cb73307285292203f4a4417d5d"
@@ -2197,6 +2205,13 @@
     "@types/clean-css" "*"
     "@types/relateurl" "*"
     "@types/uglify-js" "*"
+
+"@types/http-proxy@^1.17.4":
+  version "1.17.4"
+  resolved "https://registry.yarnpkg.com/@types/http-proxy/-/http-proxy-1.17.4.tgz#e7c92e3dbe3e13aa799440ff42e6d3a17a9d045b"
+  integrity sha512-IrSHl2u6AWXduUaDLqYpt45tLVCtYv7o4Z0s1KghBCDgIIS9oW5K1H8mZG/A2CfeLdEa7rTd1ACOiHBc1EMT2Q==
+  dependencies:
+    "@types/node" "*"
 
 "@types/json-schema@^7.0.3":
   version "7.0.4"
@@ -5461,14 +5476,6 @@ fast-safe-stringify@^2.0.7:
   resolved "https://registry.yarnpkg.com/fast-safe-stringify/-/fast-safe-stringify-2.0.7.tgz#124aa885899261f68aedb42a7c080de9da608743"
   integrity sha512-Utm6CdzT+6xsDk2m8S6uL8VHxNwI6Jub+e9NYTcAms28T84pTa25GJQV9j0CY0N1rM8hK4x6grpF2BQf+2qwVA==
 
-fastify-cors@^3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/fastify-cors/-/fastify-cors-3.0.3.tgz#c1b2227983d7b02feff73fd642d81041adfbe124"
-  integrity sha512-SDMa+GtyTTAU7pWZwY4fukb/VwCZ4c30p0oEaE7/d/+VCvceB1+NzW2udp2dSZZfWR7J1kUookCpw2dLmtAsSw==
-  dependencies:
-    fastify-plugin "^1.6.0"
-    vary "^1.1.2"
-
 fastify-elasticsearch@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/fastify-elasticsearch/-/fastify-elasticsearch-1.1.0.tgz#b345737d1ec4ef0729374eff5aa92151ee33c1d8"
@@ -6332,7 +6339,18 @@ http-proxy-middleware@^0.19.1:
     lodash "^4.17.11"
     micromatch "^3.1.10"
 
-http-proxy@^1.17.0:
+http-proxy-middleware@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/http-proxy-middleware/-/http-proxy-middleware-1.0.4.tgz#425ea177986a0cda34f9c81ec961c719adb6c2a9"
+  integrity sha512-8wiqujNWlsZNbeTSSWMLUl/u70xbJ5VYRwPR8RcAbvsNxzAZbgwLzRvT96btbm3fAitZUmo5i8LY6WKGyHDgvA==
+  dependencies:
+    "@types/http-proxy" "^1.17.4"
+    http-proxy "^1.18.1"
+    is-glob "^4.0.1"
+    lodash "^4.17.15"
+    micromatch "^4.0.2"
+
+http-proxy@^1.17.0, http-proxy@^1.18.1:
   version "1.18.1"
   resolved "https://registry.yarnpkg.com/http-proxy/-/http-proxy-1.18.1.tgz#401541f0534884bbf95260334e72f88ee3976549"
   integrity sha512-7mz/721AbnJwIVbnaSv1Cz3Am0ZLT/UBwkC92VlxhXv/k/BBQfM2fXElQNC27BVGr0uwUpplYPQM9LnaBMR5NQ==
@@ -7608,7 +7626,7 @@ micromatch@^3.1.10, micromatch@^3.1.4:
     snapdragon "^0.8.1"
     to-regex "^3.0.2"
 
-micromatch@^4.0.0:
+micromatch@^4.0.0, micromatch@^4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/micromatch/-/micromatch-4.0.2.tgz#4fcb0999bf9fbc2fcbdd212f6d629b9a56c39259"
   integrity sha512-y7FpHSbMUMoyPbYUSzO6PaZ6FyRnQOpHuKwbo1G+Knck95XVU4QAiKdGEnj5wwoS7PlOgthX/09u5iFJ+aYf5Q==
@@ -8154,11 +8172,6 @@ number-is-nan@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
-
-nuxt-client-init-module@^0.1.8:
-  version "0.1.8"
-  resolved "https://registry.yarnpkg.com/nuxt-client-init-module/-/nuxt-client-init-module-0.1.8.tgz#6b8fabdf0ff4d5f2f4ec72df2dab553d9a331c92"
-  integrity sha512-pHswEnDSc2JxC57XsPK8dPPbUeHHe3u56zb/Lt2CihkVo5NsuLjGVPLFBbKMVaqRCIwvhbmik6wXHOSPJdpJbA==
 
 nuxt-property-decorator@^2.7.2:
   version "2.7.2"

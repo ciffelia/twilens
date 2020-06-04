@@ -58,7 +58,8 @@ const config: Configuration = {
   */
   buildModules: [
     '@nuxt/typescript-build',
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+    '@nuxtjs/pwa'
   ],
 
   /*
@@ -66,8 +67,7 @@ const config: Configuration = {
   */
   modules: [
     'nuxt-client-init-module',
-    '@nuxtjs/axios',
-    '@nuxtjs/pwa'
+    '@nuxtjs/axios'
   ],
 
   /*

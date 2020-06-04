@@ -6,6 +6,8 @@ export default fp((server, options, next) => {
     await server.elastic.bulk({
       index: 'tweets',
       body: request.body
+    }, {
+      requestTimeout: Infinity
     })
 
     reply.send()

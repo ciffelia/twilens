@@ -25,7 +25,12 @@
       Upload and process
     </v-stepper-step>
     <v-stepper-content step="4">
-      <v-progress-linear v-if="!complete" indeterminate />
+      <div v-if="!complete">
+        <v-progress-linear :value="uploadedPercent" />
+        <span>
+          Uploaded {{ uploadedChunks }} / {{ numChunks }} - {{ Math.round(uploadedPercent) }}%
+        </span>
+      </div>
       <v-alert v-else type="success">
         Upload completed.
       </v-alert>
@@ -50,6 +55,13 @@ export default class TweetsUploadStepper extends Vue {
   step: number = 1
   complete: boolean = false
 
+  numChunks: number = 0
+  uploadedChunks: number = 0
+
+  get uploadedPercent (): number {
+    return this.uploadedChunks / this.numChunks * 100
+  }
+
   async onUploadClicked (screenName: string, tweetJsFile: File) {
     this.step = 2
     // Wait for loading animation
@@ -59,14 +71,18 @@ export default class TweetsUploadStepper extends Vue {
 
     this.step = 3
     await sleep(500)
-    const bulkRequest = buildBulkQuery(tweetList)
+    const bulkQueryList = buildBulkQuery(tweetList)
 
     this.step = 4
-    await this.$axios.post('/bulk', bulkRequest, {
-      headers: {
-        'content-type': 'application/x-ndjson'
-      }
-    })
+    this.numChunks = bulkQueryList.length
+    for (const bulkQuery of bulkQueryList) {
+      await this.$axios.post('/bulk', bulkQuery, {
+        headers: {
+          'content-type': 'application/x-ndjson'
+        }
+      })
+      this.uploadedChunks++
+    }
 
     this.complete = true
   }

@@ -1,19 +1,26 @@
 import { TweetRecord } from '@twilens/types'
 
-const buildBulkQuery = (tweetList: TweetRecord[]): string => {
-  let resultNdjson = ''
+const buildBulkQuery = (tweetList: TweetRecord[]): string[] => {
+  const chunkList: string[] = []
+  let currentChunk = ''
 
-  for (const tweet of tweetList) {
+  for (const [i, tweet] of tweetList.entries()) {
     const { _id, ...fields } = tweet
 
-    resultNdjson += JSON.stringify({
+    currentChunk += JSON.stringify({
       index: { _id }
     }) + '\n'
+    currentChunk += JSON.stringify(fields) + '\n'
 
-    resultNdjson += JSON.stringify(fields) + '\n'
+    if (i % 100 === 99) {
+      chunkList.push(currentChunk)
+      currentChunk = ''
+    }
   }
 
-  return resultNdjson
+  chunkList.push(currentChunk)
+
+  return chunkList
 }
 
 export { buildBulkQuery }

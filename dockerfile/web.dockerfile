@@ -1,4 +1,4 @@
-FROM node:12.17.0-alpine
+FROM node:12.18.1-alpine
 
 # Switch to non-root user
 RUN adduser -D twilens

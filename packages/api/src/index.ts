@@ -1,8 +1,9 @@
 import 'make-promises-safe'
 import fastify from 'fastify'
 import fastifySensible from 'fastify-sensible'
+import fastifyCors from 'fastify-cors'
 import fastifyElasticsearch from 'fastify-elasticsearch'
-import { port, elasticsearchNode } from './config'
+import { port, corsOrigin, elasticsearchNode } from './config'
 
 import pingRoute from './routes/reset'
 import searchRoute from './routes/search'
@@ -16,6 +17,9 @@ const server = fastify({
 server.register(fastifySensible, {
   // Prevent Elasticsearch errors being hidden
   errorHandler: false
+})
+server.register(fastifyCors, {
+  origin: corsOrigin
 })
 server.register(fastifyElasticsearch, {
   node: elasticsearchNode

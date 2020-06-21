@@ -66,8 +66,7 @@ const config: Configuration = {
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/axios',
-    '@nuxtjs/proxy'
+    '@nuxtjs/axios'
   ],
 
   /*
@@ -75,18 +74,6 @@ const config: Configuration = {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    proxy: true,
-    prefix: '/api'
-  },
-
-  proxy: {
-    '/api': {
-      // Set dummy url to avoid build error
-      target: process.env.TWILENS_API_BASE_URL ?? 'https://dummy-proxy-target.example.com',
-      pathRewrite: {
-        '^/api': ''
-      }
-    }
   },
 
   /*
@@ -116,6 +103,18 @@ const config: Configuration = {
     ** You can extend webpack config here
     */
     extend (_config, _ctx) {
+    }
+  },
+
+  publicRuntimeConfig: {
+    axios: {
+      browserBaseURL: process.env.TWILENS_API_BASE_URL_BROWSER
+    }
+  },
+
+  privateRuntimeConfig: {
+    axios: {
+      baseURL: process.env.TWILENS_API_BASE_URL_SERVER
     }
   }
 }

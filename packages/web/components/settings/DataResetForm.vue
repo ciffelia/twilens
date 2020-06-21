@@ -55,7 +55,10 @@ export default class DataResetForm extends Vue {
   async reset () {
     this.resetting = true
 
-    await this.$axios.post('/reset')
+    await this.$axios.post('/reset', undefined, {
+      // @ts-ignore
+      progress: false
+    })
 
     this.resetting = false
     this.dialog = false

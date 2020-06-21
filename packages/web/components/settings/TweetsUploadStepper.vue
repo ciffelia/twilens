@@ -79,7 +79,9 @@ export default class TweetsUploadStepper extends Vue {
       await this.$axios.post('/bulk', bulkQuery, {
         headers: {
           'content-type': 'application/x-ndjson'
-        }
+        },
+        // @ts-ignore
+        progress: false
       })
       this.uploadedChunks++
     }

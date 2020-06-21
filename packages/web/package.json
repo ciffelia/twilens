@@ -13,17 +13,17 @@
     "start": "nuxt-ts start"
   },
   "dependencies": {
-    "@nuxt/typescript-runtime": "^0.4.8",
-    "@nuxtjs/axios": "^5.10.3",
+    "@nuxt/typescript-runtime": "^0.4.10",
+    "@nuxtjs/axios": "^5.11.0",
     "@nuxtjs/proxy": "^2.0.0",
     "@twilens/tweetjs-parser": "^0.0.1",
     "@twilens/types": "^0.0.1",
     "luxon": "^1.24.1",
-    "nuxt": "^2.12.2",
+    "nuxt": "^2.13.0",
     "nuxt-property-decorator": "^2.7.2"
   },
   "devDependencies": {
-    "@nuxt/typescript-build": "^1.0.1",
+    "@nuxt/typescript-build": "^1.0.3",
     "@nuxtjs/eslint-config-typescript": "^2.0.0",
     "@nuxtjs/pwa": "^3.0.0-0",
     "@nuxtjs/vuetify": "^1.11.2",

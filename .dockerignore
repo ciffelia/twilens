@@ -107,8 +107,7 @@
 # TernJS port file
 **/.tern-port
 
-.idea
-
 ###
 
+.idea
 .github

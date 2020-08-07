@@ -15,7 +15,10 @@ export default fp((server, options, next) => {
       body: tweetsIndex
     })
 
-    reply.send()
+    // 204 No Content
+    await reply
+      .code(204)
+      .send()
   })
 
   next()

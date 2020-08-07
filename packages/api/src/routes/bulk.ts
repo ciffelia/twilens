@@ -2,7 +2,9 @@ import fp from 'fastify-plugin'
 
 export default fp((server, options, next) => {
   // eslint-disable-next-line @typescript-eslint/require-await
-  server.post('/bulk', async (request, reply) => {
+  server.post<{
+    Body: string
+  }>('/bulk', async (request, reply) => {
     await server.elastic.bulk({
       index: 'tweets',
       body: request.body
@@ -10,7 +12,10 @@ export default fp((server, options, next) => {
       requestTimeout: '1h'
     })
 
-    reply.send()
+    // 202 Accepted
+    await reply
+      .code(202)
+      .send()
   })
 
   next()

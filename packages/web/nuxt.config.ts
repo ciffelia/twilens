@@ -81,8 +81,7 @@ const config: Configuration = {
 
   proxy: {
     '/api': {
-      // Set dummy url to avoid build error
-      target: process.env.TWILENS_API_BASE_URL ?? 'https://dummy-proxy-target.example.com',
+      target: process.env.TWILENS_API_BASE_URL,
       pathRewrite: {
         '^/api': ''
       }

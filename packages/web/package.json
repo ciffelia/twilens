@@ -15,7 +15,7 @@
   "dependencies": {
     "@nuxt/typescript-runtime": "^0.4.10",
     "@nuxtjs/axios": "^5.11.0",
-    "@nuxtjs/proxy": "^2.0.0",
+    "@nuxtjs/proxy": "^2.0.1",
     "@twilens/tweetjs-parser": "^0.0.1",
     "@twilens/types": "^0.0.1",
     "luxon": "^1.24.1",

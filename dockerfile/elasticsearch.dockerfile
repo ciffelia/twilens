@@ -12,9 +12,9 @@ RUN wget ${SUDACHI_CORE_DICT_URL} && \
 
 #####
 
-FROM docker.elastic.co/elasticsearch/elasticsearch:7.8.0
+FROM docker.elastic.co/elasticsearch/elasticsearch:7.8.1
 
-ARG ELASTICSEARCH_SUDACHI_URL="https://github.com/WorksApplications/elasticsearch-sudachi/releases/download/v7.8.0-2.0.2/analysis-sudachi-7.8.0-2.0.2.zip"
+ARG ELASTICSEARCH_SUDACHI_URL="https://github.com/WorksApplications/elasticsearch-sudachi/releases/download/v7.8.1-2.0.3/analysis-sudachi-7.8.1-2.0.3.zip"
 ARG SUDACHI_DICT_VERSION="20200330"
 
 # Install plugins

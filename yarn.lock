@@ -3329,10 +3329,10 @@ available-typed-arrays@^1.0.0, available-typed-arrays@^1.0.2:
   dependencies:
     array-filter "^1.0.0"
 
-avvio@^6.4.1:
-  version "6.4.1"
-  resolved "https://registry.yarnpkg.com/avvio/-/avvio-6.4.1.tgz#bb4127ca8b9b9c322d742a9b40962dfdca5d68b1"
-  integrity sha512-jeZaUK+F7MuWSNT3VHfltskPJZKqVeTWQqBA4SDaDoLaQ0lb5TOgLeQT1BEuhTIUNISCDCGY3zjYyVmQQ48gKA==
+avvio@^6.5.0:
+  version "6.5.0"
+  resolved "https://registry.yarnpkg.com/avvio/-/avvio-6.5.0.tgz#d2cf119967fe90d2156afc29de350ced800cdaab"
+  integrity sha512-BmzcZ7gFpyFJsW8G+tfQw8vJNUboA9SDkkHLZ9RAALhvw/rplfWwni8Ee1rA11zj/J7/E5EvZmweusVvTHjWCA==
   dependencies:
     archy "^1.0.0"
     debug "^4.0.0"
@@ -5795,14 +5795,14 @@ fastify-sensible@^2.1.1:
     type-is "^1.6.18"
     vary "^1.1.2"
 
-fastify@^2.15.0:
-  version "2.15.0"
-  resolved "https://registry.yarnpkg.com/fastify/-/fastify-2.15.0.tgz#0e1d793f92cdb7e23f8c370c9a1bbd755912c077"
-  integrity sha512-wbLA9Tif2A9m0tkzCUIqGyIqncM9iI8QTd++HRnmkbUk4mEs4/d8k9LaBR0ypytHvQJ1TNQbJ+m1Mt0MmfUhuA==
+fastify@^2.15.3:
+  version "2.15.3"
+  resolved "https://registry.yarnpkg.com/fastify/-/fastify-2.15.3.tgz#ba941e9b62175f053ef01c3eea9fa76e91fffed1"
+  integrity sha512-2O+A9SjHpbH/SgDDMA+xIznhx/rDeNuwPIiZSFVU7fwOiiFfQjHmfu21jp22wMmsZ5PYKYFR+pze2TzoAUmOtw==
   dependencies:
     abstract-logging "^2.0.0"
     ajv "^6.12.0"
-    avvio "^6.4.1"
+    avvio "^6.5.0"
     fast-json-stringify "^1.18.0"
     find-my-way "^2.2.2"
     flatstr "^1.0.12"

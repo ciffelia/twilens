@@ -13,7 +13,7 @@ export default class FormattedDate extends Vue {
 
   get formattedDate (): string {
     const dateTime = DateTime.fromSeconds(this.unixTime)
-    return dateTime.toLocaleString(DateTime.DATETIME_SHORT)
+    return dateTime.toLocaleString(DateTime.DATETIME_SHORT) ?? 'Invalid date'
   }
 }
 </script>

@@ -10,7 +10,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "lerna run build",
+    "build": "yarn workspaces foreach --parallel --topological-dev run build",
     "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.vue .",
     "fix": "eslint --fix --ignore-path .gitignore --ext .js,.ts,.vue ."
   },
@@ -25,7 +25,6 @@
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
-    "lerna": "^3.22.1"
+    "eslint-plugin-standard": "^4.0.1"
   }
 }

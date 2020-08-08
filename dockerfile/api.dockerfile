@@ -12,10 +12,9 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSI
 
 COPY --chown=twilens:twilens . .
 
-RUN yarn install --frozen-lockfile && \
+RUN yarn install --immutable && \
     yarn run build && \
-    yarn install --frozen-lockfile --production && \
-    yarn cache clean
+    yarn cache clean --all
 
 ENTRYPOINT ./dockerize -wait $TWILENS_ELASTICSEARCH_NODE -timeout 30s && \
            yarn workspace @twilens/api start

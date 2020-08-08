@@ -12,10 +12,9 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSI
 
 COPY --chown=twilens:twilens . .
 
-RUN yarn install --frozen-lockfile && \
+RUN yarn install --immutable && \
     yarn run build && \
-    yarn install --frozen-lockfile --production && \
-    yarn cache clean
+    yarn cache clean --all
 
 ENV HOST 0.0.0.0
 ENTRYPOINT yarn workspace @twilens/web start

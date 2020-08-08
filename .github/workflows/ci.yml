@@ -11,7 +11,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
-      - run: yarn install --frozen-lockfile
+      - run: yarn install --immutable
       - run: yarn run build
 
   lint:
@@ -22,7 +22,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
-      - run: yarn install --frozen-lockfile
+      - run: yarn install --immutable
       - run: yarn run lint
 
   build-and-push-docker:

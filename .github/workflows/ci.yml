@@ -7,39 +7,49 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
+
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
+
       - run: yarn install --immutable
+
       - run: yarn run build
 
   lint:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
+
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
+
       - run: yarn install --immutable
+
       - run: yarn run lint
 
   build-and-push-docker:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
+
       - name: Login to GitHub Packages
         if: github.ref == 'refs/heads/master'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: echo "${GITHUB_TOKEN}" | docker login docker.pkg.github.com --username ciffelia --password-stdin
+
       - name: Pull build cache
         if: github.ref == 'refs/heads/master'
         continue-on-error: true
         run: docker-compose pull --quiet
+
       - name: Build docker images
         run: docker-compose build
+
       - name: Push Docker images
         if: github.ref == 'refs/heads/master'
         run: docker-compose push

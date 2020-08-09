@@ -2,15 +2,11 @@ version: '3.7'
 
 services:
   api:
+    environment:
+      TWILENS_ELASTICSEARCH_NODE: http://YOUR_ELASTICSEARCH_NODE:9200
     ports:
       - '8080:8080'
 
   web:
     ports:
       - '3000:3000'
-
-  elasticsearch:
-    ports:
-      - '9200:9200'
-    environment:
-      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"

@@ -1981,6 +1981,7 @@ __metadata:
   resolution: "@twilens/api@workspace:packages/api"
   dependencies:
     "@twilens/types": ^0.0.1
+    "@types/node": ^12.20.6
     fastify: ^3.14.0
     fastify-elasticsearch: ^2.0.0
     fastify-plugin: ^3.0.0

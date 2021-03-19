@@ -19,5 +19,8 @@
     "fastify-sensible": "^3.1.1",
     "make-promises-safe": "^5.1.0",
     "ts-node": "^9.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^12.20.6"
   }
 }

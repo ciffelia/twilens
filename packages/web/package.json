@@ -8,12 +8,11 @@
   "homepage": "https://github.com/ciffelia/twilens#readme",
   "bugs": "https://github.com/ciffelia/twilens/issues",
   "scripts": {
-    "dev": "nuxt-ts",
-    "build": "nuxt-ts build",
-    "start": "nuxt-ts start"
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start"
   },
   "dependencies": {
-    "@nuxt/typescript-runtime": "^2.1.0",
     "@nuxtjs/axios": "^5.13.1",
     "@nuxtjs/proxy": "^2.1.0",
     "@twilens/tweetjs-parser": "^0.0.1",

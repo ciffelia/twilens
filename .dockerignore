@@ -16,11 +16,17 @@
 **/.nuxt
 **/dist
 
+# Service worker
+**/sw.*
+
 # Yarn v2
-.yarn/*
-!.yarn/releases
-!.yarn/plugins
-!.yarn/sdks
+**/.yarn/*
+!**/.yarn/patches
+!**/.yarn/releases
+!**/.yarn/plugins
+!**/.yarn/sdks
+!**/.yarn/versions
+**/.pnp.*
 
 ###
 

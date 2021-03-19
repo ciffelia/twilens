@@ -1407,6 +1407,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@elastic/elasticsearch@npm:^7.11.0":
+  version: 7.11.0
+  resolution: "@elastic/elasticsearch@npm:7.11.0"
+  dependencies:
+    debug: ^4.1.1
+    hpagent: ^0.1.1
+    ms: ^2.1.1
+    pump: ^3.0.0
+    secure-json-parse: ^2.1.0
+  checksum: 09e207c80991d3cdd7044bdf537ad230d8607031424abd8aca3fe91631ba407f15059e3a4103ceb563822c170502efcffaaa1b3cb57d8096db634a3dd18390c0
+  languageName: node
+  linkType: hard
+
 "@eslint/eslintrc@npm:^0.4.0":
   version: 0.4.0
   resolution: "@eslint/eslintrc@npm:0.4.0"
@@ -1980,6 +1993,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@twilens/api@workspace:packages/api"
   dependencies:
+    "@elastic/elasticsearch": ^7.11.0
     "@twilens/types": ^0.0.1
     "@types/node": ^12.20.6
     fastify: ^3.14.0
@@ -7079,6 +7093,13 @@ fsevents@~2.3.1:
   version: 2.8.8
   resolution: "hosted-git-info@npm:2.8.8"
   checksum: 3ecc389dc6ecbd5463fada7e04461e96f3c817fe2f989ca41e9dd3b503745a0bfa26fba405861b2831ca64edc1abc5d2fbc97ee977303f89650dac4fbfdc2d7a
+  languageName: node
+  linkType: hard
+
+"hpagent@npm:^0.1.1":
+  version: 0.1.1
+  resolution: "hpagent@npm:0.1.1"
+  checksum: c68850c445e6679525e395122ff77e17a81574939178aab25ecd51a49fa84a53d76d9d0ecbe727f38e0ecd4a3c16cfb933979a1620ee3c73398c68cd9a38dbb6
   languageName: node
   linkType: hard
 

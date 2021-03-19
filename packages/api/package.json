@@ -9,6 +9,7 @@
   "bugs": "https://github.com/ciffelia/twilens/issues",
   "scripts": {
     "dev": "ts-node --files src/index.ts",
+    "build": "yarn g:tsc --noEmit",
     "start": "ts-node --files --transpile-only src/index.ts"
   },
   "dependencies": {

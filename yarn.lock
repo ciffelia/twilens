@@ -2034,7 +2034,14 @@ __metadata:
     "@twilens/tweetjs-parser": ^0.0.1
     "@twilens/types": ^0.0.1
     "@types/luxon": ^1.26.2
+    "@typescript-eslint/eslint-plugin": ^4.18.0
+    eslint-plugin-import: ^2.22.1
+    eslint-plugin-jest: ^24.3.2
+    eslint-plugin-node: ^11.1.0
     eslint-plugin-nuxt: ^2.0.0
+    eslint-plugin-promise: ^4.3.1
+    eslint-plugin-unicorn: ^28.0.2
+    eslint-plugin-vue: ^7.7.0
     luxon: ^1.26.0
     nuxt: ^2.15.3
     nuxt-property-decorator: ^2.9.1
@@ -5611,7 +5618,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-jest@npm:^24.1.7":
+"eslint-plugin-jest@npm:^24.1.7, eslint-plugin-jest@npm:^24.3.2":
   version: 24.3.2
   resolution: "eslint-plugin-jest@npm:24.3.2"
   dependencies:

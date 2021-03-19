@@ -12,6 +12,9 @@ node_modules/
 .nuxt
 dist
 
+# Service worker
+sw.*
+
 # Yarn v2
 .yarn/*
 !.yarn/patches

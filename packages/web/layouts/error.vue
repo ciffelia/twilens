@@ -17,11 +17,11 @@ export default class ErrorPage extends Vue {
   @Prop({ type: Object, required: true })
   readonly error!: NuxtError
 
-  get message (): string {
+  get message(): string {
     return `Error ${this.error.statusCode}: ${this.error.message}`
   }
 
-  head () {
+  head() {
     return {
       title: this.message
     }

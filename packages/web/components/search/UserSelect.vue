@@ -4,7 +4,6 @@
     label="User"
     hide-details
     :items="items"
-
     :value="value"
     @input="$emit('input', $event)"
   />
@@ -25,7 +24,7 @@ export default class UserSelect extends Vue {
   })
   readonly users!: SelectItem[]
 
-  get items (): SelectItem[] {
+  get items(): SelectItem[] {
     return [
       // @ts-ignore
       { text: 'All', value: null },

@@ -1,9 +1,7 @@
 import { TweetSource } from './TweetSource'
 
 const parseSource = (source: string): TweetSource => {
-  const match = source.match(
-    /^<a href="(.+)" rel="nofollow">(.+)<\/a>$/
-  )
+  const match = source.match(/^<a href="(.+)" rel="nofollow">(.+)<\/a>$/)
 
   if (match == null) {
     throw new Error(`Invalid source string: ${source}`)

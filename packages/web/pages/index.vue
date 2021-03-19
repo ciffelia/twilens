@@ -2,10 +2,7 @@
   <v-container fill-height>
     <v-row align="center" justify="center">
       <v-col>
-        <search-form
-          v-model="searchQuery"
-          @submit="search"
-        />
+        <search-form v-model="searchQuery" @submit="search" />
       </v-col>
     </v-row>
   </v-container>
@@ -35,7 +32,7 @@ export default class IndexPage extends Vue {
 
   searchQuery: string = ''
 
-  search () {
+  search() {
     const searchOptions: SearchOptions = {
       ...this.DefaultSearchOptions,
       query: this.searchQuery

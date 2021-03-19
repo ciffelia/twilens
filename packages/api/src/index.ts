@@ -27,9 +27,13 @@ import uploadRoute from './routes/bulk'
   await server.register(searchRoute)
   await server.register(uploadRoute)
 
-  server.addContentTypeParser('application/x-ndjson', { parseAs: 'string' }, async function (request: FastifyRequest, payload: string) {
-    return payload
-  })
+  server.addContentTypeParser(
+    'application/x-ndjson',
+    { parseAs: 'string' },
+    async function (request: FastifyRequest, payload: string) {
+      return payload
+    }
+  )
 
   await server.listen(port, '0.0.0.0')
 })()

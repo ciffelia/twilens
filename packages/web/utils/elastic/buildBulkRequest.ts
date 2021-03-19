@@ -7,9 +7,10 @@ const buildBulkQuery = (tweetList: TweetRecord[]): string[] => {
   for (const [i, tweet] of tweetList.entries()) {
     const { _id, ...fields } = tweet
 
-    currentChunk += JSON.stringify({
-      index: { _id }
-    }) + '\n'
+    currentChunk +=
+      JSON.stringify({
+        index: { _id }
+      }) + '\n'
     currentChunk += JSON.stringify(fields) + '\n'
 
     if (i % 100 === 99) {

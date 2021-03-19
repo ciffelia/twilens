@@ -1,29 +1,20 @@
 <template>
-  <v-dialog
-    v-model="dialog"
-    max-width="300"
-    :persistent="resetting"
-  >
+  <v-dialog v-model="dialog" max-width="300" :persistent="resetting">
     <template #activator="{ on }">
-      <v-btn large color="error" v-on="on">
-        Reset data
-      </v-btn>
+      <v-btn large color="error" v-on="on"> Reset data </v-btn>
     </template>
 
     <v-card>
-      <v-card-title class="text-h5">
-        Reset data?
-      </v-card-title>
+      <v-card-title class="text-h5"> Reset data? </v-card-title>
 
-      <v-card-text>Elasticsearch index will be removed and recreated. All data will be lost.</v-card-text>
+      <v-card-text
+        >Elasticsearch index will be removed and recreated. All data will be
+        lost.</v-card-text
+      >
 
       <v-card-actions>
         <v-spacer />
-        <v-btn
-          text
-          :disabled="resetting"
-          @click="dialog = false"
-        >
+        <v-btn text :disabled="resetting" @click="dialog = false">
           Cancel
         </v-btn>
         <v-btn
@@ -48,11 +39,11 @@ export default class DataResetForm extends Vue {
   dialog: boolean = false
   resetting: boolean = false
 
-  closeDialog () {
+  closeDialog() {
     this.dialog = false
   }
 
-  async reset () {
+  async reset() {
     this.resetting = true
 
     await this.$axios.post('/reset', undefined, {

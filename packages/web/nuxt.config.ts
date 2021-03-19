@@ -10,10 +10,7 @@ const config: NuxtConfig = {
       return titleChunk ? `${titleChunk} - twilens` : 'twilens'
     },
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'robots', content: 'noindex,nofollow' },
-      { hid: 'description', name: 'description', content: '🔍 Full-text search for your tweets' }
+      { name: 'robots', content: 'noindex,nofollow' }
     ],
     link: [
       { rel: 'icon', type: 'image/png', href: '/icon.png' }

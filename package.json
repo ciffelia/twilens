@@ -11,8 +11,8 @@
   ],
   "scripts": {
     "build": "yarn workspaces foreach --verbose --parallel --topological-dev run build",
-    "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.vue .",
-    "fix": "eslint --fix --ignore-path .gitignore --ext .js,.ts,.vue .",
+    "lint": "eslint --ext .js,.ts,.vue .",
+    "fix": "eslint --fix --ext .js,.ts,.vue ."
     "g:tsc": "cd $INIT_CWD && tsc"
   },
   "dependencies": {

@@ -9,10 +9,10 @@
     ],
     "sourceMap": true,
     "noEmit": true,
-    
+
     /* Strict Type-Checking Options */
     "strict": true,
-    
+
     /* Module Resolution Options */
     "moduleResolution": "node",
     "baseUrl": ".",
@@ -28,14 +28,14 @@
       "@nuxtjs/axios"
     ],
     "esModuleInterop": true,
-  
+
     /* Experimental Options */
     "experimentalDecorators": true,
-  
+
     /* Advanced Options */
     "forceConsistentCasingInFileNames": true
   },
-  
+
   "include": [
     "./@types/**/*",
     "./components/**/*",

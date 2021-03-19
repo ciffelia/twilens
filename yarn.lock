@@ -1767,21 +1767,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/typescript-runtime@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "@nuxt/typescript-runtime@npm:2.1.0"
-  dependencies:
-    ts-node: ^9.1.1
-    typescript: ~4.2
-  peerDependencies:
-    "@nuxt/types": ">=2.13.1"
-  bin:
-    nuxt-ts: bin/nuxt-ts.js
-    nuxts: bin/nuxt-ts.js
-  checksum: d3892778c394881b45c3fe94034d680f6fe1a1c903d2a91bd8bead1557061a6b9763cec4f7b7cdca6752524b110b3889b9407254884a0c668498812b3913b658
-  languageName: node
-  linkType: hard
-
 "@nuxt/utils@npm:2.15.3":
   version: 2.15.3
   resolution: "@nuxt/utils@npm:2.15.3"
@@ -2026,7 +2011,6 @@ __metadata:
   dependencies:
     "@nuxt/types": ^2.15.3
     "@nuxt/typescript-build": ^2.1.0
-    "@nuxt/typescript-runtime": ^2.1.0
     "@nuxtjs/axios": ^5.13.1
     "@nuxtjs/eslint-config-typescript": ^6.0.0
     "@nuxtjs/proxy": ^2.1.0
@@ -5660,15 +5644,6 @@ __metadata:
   peerDependencies:
     eslint: ">=5.0.0"
   checksum: 4cafe7ac512ffb15bf1020e2ede3fd59cfbef9601b7cbf05e155eca9f10c2eaeb96932effb477eb57fca4fa7b3b2a3469e165ede73a888036ffa5cf6c83a5af2
-  languageName: node
-  linkType: hard
-
-"eslint-plugin-standard@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "eslint-plugin-standard@npm:5.0.0"
-  peerDependencies:
-    eslint: ">=5.0.0"
-  checksum: b51a7e87ae38d2ddd4e04b546fb72ca4e93c14789f028c751a0b31375ec40619281e84d386833419c3ded8911dafa56d0a2645f88510abbd37edaac7d77337a0
   languageName: node
   linkType: hard
 
@@ -12783,7 +12758,6 @@ resolve@^1.14.2:
     eslint-plugin-import: ^2.22.1
     eslint-plugin-node: ^11.1.0
     eslint-plugin-promise: ^4.3.1
-    eslint-plugin-standard: ^5.0.0
     typescript: ~4.2.3
   languageName: unknown
   linkType: soft

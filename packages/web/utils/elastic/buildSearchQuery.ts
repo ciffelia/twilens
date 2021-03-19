@@ -1,6 +1,8 @@
 import { SearchMode, SearchDisplayOptions, SearchOptions } from '@twilens/types'
 
-const buildSearchQuery = (searchOptions: SearchOptions): { [key: string]: any } => {
+const buildSearchQuery = (
+  searchOptions: SearchOptions
+): { [key: string]: any } => {
   const { displayOptions } = searchOptions
 
   if (searchOptions.mode !== 'exact' && searchOptions.mode !== 'fuzzy') {
@@ -38,14 +40,18 @@ const buildSearchQuery = (searchOptions: SearchOptions): { [key: string]: any } 
   }
 }
 
-const calculatePage = (displayOptions: SearchDisplayOptions): { from: number, size: number } => {
+const calculatePage = (
+  displayOptions: SearchDisplayOptions
+): { from: number; size: number } => {
   return {
     from: (displayOptions.page - 1) * displayOptions.itemsPerPage,
     size: displayOptions.itemsPerPage
   }
 }
 
-const parseQuery = (searchOptions: SearchOptions): { filter: any[], mustNot: any[] } => {
+const parseQuery = (
+  searchOptions: SearchOptions
+): { filter: any[]; mustNot: any[] } => {
   const filter: any[] = []
   const mustNot: any[] = []
 

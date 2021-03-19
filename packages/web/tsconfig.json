@@ -3,10 +3,7 @@
     /* Basic Options */
     "target": "es2018",
     "module": "esnext",
-    "lib": [
-      "esnext",
-      "dom"
-    ],
+    "lib": ["esnext", "dom"],
     "sourceMap": true,
     "noEmit": true,
 
@@ -17,16 +14,9 @@
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
-      "~/*": [
-        "./*"
-      ]
+      "~/*": ["./*"]
     },
-    "types": [
-      "@types/node",
-      "@nuxt/types",
-      "@nuxtjs/vuetify",
-      "@nuxtjs/axios"
-    ],
+    "types": ["@types/node", "@nuxt/types", "@nuxtjs/vuetify", "@nuxtjs/axios"],
     "esModuleInterop": true,
 
     /* Experimental Options */

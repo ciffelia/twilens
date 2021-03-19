@@ -2,18 +2,12 @@
   <v-container>
     <v-row>
       <v-col>
-        <h1 class="mb-4">
-          Settings
-        </h1>
+        <h1 class="mb-4">Settings</h1>
 
-        <h2 class="mb-2">
-          Upload tweets
-        </h2>
+        <h2 class="mb-2">Upload tweets</h2>
         <tweets-upload-stepper />
 
-        <h2 class="mt-6 mb-2">
-          Reset data
-        </h2>
+        <h2 class="mt-6 mb-2">Reset data</h2>
         <data-reset-form />
       </v-col>
     </v-row>
@@ -32,7 +26,7 @@ import DataResetForm from '~/components/settings/DataResetForm.vue'
   }
 })
 export default class SettingsPage extends Vue {
-  head () {
+  head() {
     return {
       title: 'Settings'
     }

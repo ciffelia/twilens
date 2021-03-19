@@ -17,8 +17,5 @@
     "forceConsistentCasingInFileNames": true
   },
 
-  "include": [
-    "./@types/**/*",
-    "./src/**/*"
-  ]
+  "include": ["./@types/**/*", "./src/**/*"]
 }

@@ -5,7 +5,6 @@
       prepend-inner-icon="mdi-magnify"
       hide-details
       solo
-
       :value="value"
       @input="$emit('input', $event)"
     />

@@ -28,12 +28,11 @@
       <div v-if="!complete">
         <v-progress-linear :value="uploadedPercent" />
         <span>
-          Uploaded {{ uploadedChunks }} / {{ numChunks }} - {{ Math.round(uploadedPercent) }}%
+          Uploaded {{ uploadedChunks }} / {{ numChunks }} -
+          {{ Math.round(uploadedPercent) }}%
         </span>
       </div>
-      <v-alert v-else type="success">
-        Upload completed.
-      </v-alert>
+      <v-alert v-else type="success"> Upload completed. </v-alert>
     </v-stepper-content>
   </v-stepper>
 </template>
@@ -58,11 +57,11 @@ export default class TweetsUploadStepper extends Vue {
   numChunks: number = 0
   uploadedChunks: number = 0
 
-  get uploadedPercent (): number {
-    return this.uploadedChunks / this.numChunks * 100
+  get uploadedPercent(): number {
+    return (this.uploadedChunks / this.numChunks) * 100
   }
 
-  async onUploadClicked (screenName: string, tweetJsFile: File) {
+  async onUploadClicked(screenName: string, tweetJsFile: File) {
     this.step = 2
     // Wait for loading animation
     await sleep(500)

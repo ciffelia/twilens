@@ -4,13 +4,13 @@
     :items="searchResult.tweets"
     :server-items-length="searchResult.count"
     item-key="_id"
-
     :page="displayOptions.page"
-    :items-per-page="(displayOptions.itemsPerPage === 10000) ? -1 : displayOptions.itemsPerPage"
+    :items-per-page="
+      displayOptions.itemsPerPage === 10000 ? -1 : displayOptions.itemsPerPage
+    "
     :sort-by="displayOptions.sortKey"
     :sort-desc="displayOptions.sortOrder === 'desc'"
     must-sort
-
     @update:options="onDataOptionsUpdated"
   >
     <template #item.created_at="{ value }">
@@ -18,7 +18,9 @@
     </template>
 
     <template #item.open="{ item }">
-      <external-link :to="`https://twitter.com/${item.user}/status/${item._id}`">
+      <external-link
+        :to="`https://twitter.com/${item.user}/status/${item._id}`"
+      >
         <v-icon>mdi-open-in-new</v-icon>
       </external-link>
     </template>
@@ -61,10 +63,10 @@ export default class TweetsTable extends Vue {
   })
   readonly searchResult!: SearchResult
 
-  onDataOptionsUpdated ({ page, itemsPerPage, sortBy, sortDesc }: DataOptions) {
+  onDataOptionsUpdated({ page, itemsPerPage, sortBy, sortDesc }: DataOptions) {
     const newDisplayOptions: SearchDisplayOptions = {
       page,
-      itemsPerPage: (itemsPerPage === -1) ? 10000 : itemsPerPage,
+      itemsPerPage: itemsPerPage === -1 ? 10000 : itemsPerPage,
       sortKey: sortBy[0],
       sortOrder: sortDesc[0] ? 'desc' : 'asc'
     }

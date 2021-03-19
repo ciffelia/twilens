@@ -4,7 +4,8 @@ const tweetsIndex = {
       char_filter: {
         url_strip_char_filter: {
           type: 'pattern_replace',
-          pattern: 'https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)',
+          pattern:
+            'https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)',
           replacement: ''
         }
       },
@@ -13,10 +14,7 @@ const tweetsIndex = {
           type: 'ngram',
           min_gram: 1,
           max_gram: 1,
-          token_chars: [
-            'letter',
-            'digit'
-          ]
+          token_chars: ['letter', 'digit']
         },
         configured_sudachi_tokenizer: {
           type: 'sudachi_tokenizer',
@@ -27,10 +25,7 @@ const tweetsIndex = {
       analyzer: {
         search_unigram_analyzer: {
           type: 'custom',
-          char_filter: [
-            'icu_normalizer',
-            'kuromoji_iteration_mark'
-          ],
+          char_filter: ['icu_normalizer', 'kuromoji_iteration_mark'],
           tokenizer: 'unigram_tokenizer'
         },
         search_sudachi_analyzer: {
@@ -45,9 +40,7 @@ const tweetsIndex = {
         },
         tag_sudachi_analyzer: {
           type: 'custom',
-          char_filter: [
-            'url_strip_char_filter'
-          ],
+          char_filter: ['url_strip_char_filter'],
           tokenizer: 'configured_sudachi_tokenizer',
           filter: [
             'sudachi_part_of_speech',

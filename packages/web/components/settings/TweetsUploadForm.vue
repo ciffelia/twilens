@@ -39,11 +39,11 @@ export default class TweetsUploadForm extends Vue {
   screenName: string = ''
   tweetJsFile: File | null = null
 
-  onFileDrop (event: any) {
+  onFileDrop(event: any) {
     this.onFileSelected(event.dataTransfer.files[0])
   }
 
-  onFileSelected (file: File) {
+  onFileSelected(file: File) {
     if (!file.type.includes('javascript')) {
       throw new Error(`Unsupported mime type: ${file.type}`)
     }
@@ -51,7 +51,7 @@ export default class TweetsUploadForm extends Vue {
     this.tweetJsFile = file
   }
 
-  onUploadClicked () {
+  onUploadClicked() {
     if (this.tweetJsFile == null) {
       throw new Error('tweet.js file not selected.')
     }

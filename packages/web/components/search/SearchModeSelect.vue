@@ -4,7 +4,6 @@
     label="Search mode"
     hide-details
     :items="items"
-
     :value="value"
     @input="$emit('input', $event)"
   />

@@ -6,11 +6,15 @@
   },
   "extends": [
     "@nuxtjs/eslint-config-typescript",
-    "plugin:nuxt/recommended"
+    "plugin:nuxt/recommended",
+    "eslint-config-prettier"
   ],
   "rules": {
-    "vue/valid-v-slot": ["error", {
-      "allowModifiers": true
-    }]
+    "vue/valid-v-slot": [
+      "error",
+      {
+        "allowModifiers": true
+      }
+    ]
   }
 }

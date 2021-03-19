@@ -6,17 +6,18 @@ const pluginCallback: FastifyPluginCallback = (server, options, next) => {
   server.post<{
     Body: string
   }>('/bulk', async (request, reply) => {
-    await server.elastic.bulk({
-      index: 'tweets',
-      body: request.body
-    }, {
-      requestTimeout: '1h'
-    })
+    await server.elastic.bulk(
+      {
+        index: 'tweets',
+        body: request.body
+      },
+      {
+        requestTimeout: '1h'
+      }
+    )
 
     // 202 Accepted
-    await reply
-      .code(202)
-      .send()
+    await reply.code(202).send()
   })
 
   next()

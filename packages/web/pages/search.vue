@@ -62,13 +62,13 @@ export default class SearchPage extends Vue {
   searchResult: SearchResult = {} as any
   userList: string[] = []
 
-  head () {
+  head() {
     return {
       title: this.searchOptions.query
     }
   }
 
-  applySearchOptionsChange () {
+  applySearchOptionsChange() {
     this.$router.push({
       path: '/search',
       query: {
@@ -77,7 +77,7 @@ export default class SearchPage extends Vue {
     })
   }
 
-  async asyncData ({ $axios, query }: Context) {
+  async asyncData({ $axios, query }: Context) {
     const searchOptions = JSON.parse(query.q as string) as SearchOptions
 
     const searchBody = buildSearchQuery(searchOptions)

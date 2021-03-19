@@ -11,7 +11,7 @@ export default class FormattedDate extends Vue {
   @Prop({ type: Number, required: true })
   readonly unixTime!: number
 
-  get formattedDate (): string {
+  get formattedDate(): string {
     const dateTime = DateTime.fromSeconds(this.unixTime)
     return dateTime.toLocaleString(DateTime.DATETIME_SHORT) ?? 'Invalid date'
   }

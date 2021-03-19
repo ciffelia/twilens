@@ -10,7 +10,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "yarn workspaces foreach --parallel --topological-dev run build",
+    "build": "yarn workspaces foreach --verbose --parallel --topological-dev run build",
     "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.vue .",
     "fix": "eslint --fix --ignore-path .gitignore --ext .js,.ts,.vue .",
     "g:tsc": "cd $INIT_CWD && tsc"

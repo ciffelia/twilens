@@ -28,6 +28,13 @@
     "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/vuetify": "^1.11.3",
     "@types/luxon": "^1.26.2",
-    "eslint-plugin-nuxt": "^2.0.0"
+    "@typescript-eslint/eslint-plugin": "^4.18.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.3.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-nuxt": "^2.0.0",
+    "eslint-plugin-promise": "^4.3.1",
+    "eslint-plugin-unicorn": "^28.0.2",
+    "eslint-plugin-vue": "^7.7.0"
   }
 }

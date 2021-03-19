@@ -1,6 +1,7 @@
+import { FastifyPluginCallback } from 'fastify'
 import fp from 'fastify-plugin'
 
-export default fp((server, options, next) => {
+const pluginCallback: FastifyPluginCallback = (server, options, next) => {
   // eslint-disable-next-line @typescript-eslint/require-await
   server.post<{
     Body: {}
@@ -14,4 +15,6 @@ export default fp((server, options, next) => {
   })
 
   next()
-})
+}
+
+export default fp(pluginCallback)

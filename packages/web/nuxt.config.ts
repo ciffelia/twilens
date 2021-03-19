@@ -1,8 +1,6 @@
-import { Configuration } from '@nuxt/types'
+import { NuxtConfig } from '@nuxt/types'
 
-const config: Configuration = {
-  mode: 'universal',
-
+const config: NuxtConfig = {
   /*
   ** Headers of the page
   */

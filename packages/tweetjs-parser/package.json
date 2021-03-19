@@ -8,7 +8,7 @@
   "homepage": "https://github.com/ciffelia/twilens#readme",
   "bugs": "https://github.com/ciffelia/twilens/issues",
   "scripts": {
-    "build": "tsc"
+    "build": "yarn g:tsc"
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

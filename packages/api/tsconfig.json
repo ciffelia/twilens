@@ -6,17 +6,17 @@
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
-  
+
     /* Strict Type-Checking Options */
     "strict": true,
-    
+
     /* Module Resolution Options */
     "esModuleInterop": true,
-  
+
     /* Advanced Options */
     "forceConsistentCasingInFileNames": true
   },
-  
+
   "include": [
     "./src/**/*"
   ]

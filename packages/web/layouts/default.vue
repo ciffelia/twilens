@@ -14,9 +14,9 @@
       </v-btn>
     </v-app-bar>
 
-    <v-content>
+    <v-main>
       <nuxt />
-    </v-content>
+    </v-main>
 
     <v-footer app :absolute="true">
       <v-container>

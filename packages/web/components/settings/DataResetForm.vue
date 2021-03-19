@@ -4,7 +4,7 @@
     max-width="300"
     :persistent="resetting"
   >
-    <template v-slot:activator="{ on }">
+    <template #activator="{ on }">
       <v-btn large color="error" v-on="on">
         Reset data
       </v-btn>

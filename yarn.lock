@@ -1995,7 +1995,7 @@ __metadata:
   dependencies:
     "@elastic/elasticsearch": ^7.11.0
     "@twilens/types": ^0.0.1
-    "@types/node": ^12.20.6
+    "@types/node": ^14.14.35
     fastify: ^3.14.0
     fastify-elasticsearch: ^2.0.0
     fastify-plugin: ^3.0.0
@@ -2290,10 +2290,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^12.20.5, @types/node@npm:^12.20.6":
+"@types/node@npm:^12.20.5":
   version: 12.20.6
   resolution: "@types/node@npm:12.20.6"
   checksum: 2a652aa94521bc237fddfcbf769363ea172386bfa804e5fd409b179d8a6583d26098744500d30c23dc1de5452519a19e3836280b52cf0314d0d80e4b5be3df44
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^14.14.35":
+  version: 14.14.35
+  resolution: "@types/node@npm:14.14.35"
+  checksum: 0f6320bf5370d1ff82105fb7f26aa0658499c97d3ec78561e65b65724280244f281602541182b63470d2c8a98db22fbb4f91409c5c7c97da8c3bb8f97fbc5dbc
   languageName: node
   linkType: hard
 
@@ -12773,7 +12780,7 @@ resolve@^1.14.2:
   version: 0.0.0-use.local
   resolution: "twilens@workspace:."
   dependencies:
-    "@types/node": ^12.20.6
+    "@types/node": ^14.14.35
     "@typescript-eslint/eslint-plugin": ^4.18.0
     eslint: ^7.22.0
     eslint-config-standard-with-typescript: ^20.0.0

@@ -16,7 +16,7 @@ const config: NuxtConfig = {
       { hid: 'description', name: 'description', content: '🔍 Full-text search for your tweets' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
+      { rel: 'icon', type: 'image/png', href: '/icon.png' }
     ]
   },
 
@@ -24,9 +24,6 @@ const config: NuxtConfig = {
   ** PWA module configuration
   */
   pwa: {
-    icon: {
-      iconFileName: 'favicon.png'
-    },
     manifest: {
       name: 'twilens',
       short_name: 'twilens',

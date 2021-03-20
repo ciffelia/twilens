@@ -8,21 +8,24 @@
   "homepage": "https://github.com/ciffelia/twilens#readme",
   "bugs": "https://github.com/ciffelia/twilens/issues",
   "scripts": {
-    "dev": "ts-node --files src/index.ts",
-    "build": "yarn g:tsc --noEmit",
+    "dev": "TS_NODE_FILES=true node -r ts-node/register -r tsconfig-paths/register src/index.ts",
+    "build": "prisma generate && yarn g:tsc --noEmit",
     "start": "ts-node --files --transpile-only src/index.ts"
   },
   "dependencies": {
+    "@prisma/client": "^2.19.0",
     "@twilens/types": "^0.0.1",
     "fastify": "^3.14.0",
     "fastify-elasticsearch": "^2.0.0",
     "fastify-plugin": "^3.0.0",
     "fastify-sensible": "^3.1.1",
     "make-promises-safe": "^5.1.0",
-    "ts-node": "^9.1.1"
+    "ts-node": "^9.1.1",
+    "tsconfig-paths": "^3.9.0"
   },
   "devDependencies": {
     "@elastic/elasticsearch": "^7.11.0",
-    "@types/node": "^14.14.35"
+    "@types/node": "^14.14.35",
+    "prisma": "^2.19.0"
   }
 }

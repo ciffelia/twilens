@@ -4,7 +4,7 @@ import fastifySensible from 'fastify-sensible'
 import fastifyElasticsearch from 'fastify-elasticsearch'
 import { port, elasticsearchNode } from './config'
 
-import pingRoute from './routes/reset'
+import resetRoute from './routes/reset'
 import searchRoute from './routes/search'
 import uploadRoute from './routes/bulk'
 
@@ -23,7 +23,7 @@ import uploadRoute from './routes/bulk'
     node: elasticsearchNode
   })
 
-  await server.register(pingRoute)
+  await server.register(resetRoute)
   await server.register(searchRoute)
   await server.register(uploadRoute)
 

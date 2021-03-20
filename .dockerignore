@@ -19,6 +19,12 @@
 # Service worker
 **/sw.*
 
+# Prisma
+packages/api/prisma/generated-client
+
+# dotenv environment variables file
+**/.env
+
 # Yarn v2
 **/.yarn/*
 !**/.yarn/patches

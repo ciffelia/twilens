@@ -1989,11 +1989,40 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@prisma/client@npm:^2.19.0":
+  version: 2.19.0
+  resolution: "@prisma/client@npm:2.19.0"
+  dependencies:
+    "@prisma/engines-version": 2.19.0-39.c1455d0b443d66b0d9db9bcb1bb9ee0d5bbc511d
+  peerDependencies:
+    prisma: "*"
+  peerDependenciesMeta:
+    prisma:
+      optional: true
+  checksum: d23fb4231c03c92ec07881f2a4071c286f29373aba5971388b08da7b9e4ebd7bce628100f49c21b59a6d73cabcf1d2a442831b22c20bdb609f43982b0243828d
+  languageName: node
+  linkType: hard
+
+"@prisma/engines-version@npm:2.19.0-39.c1455d0b443d66b0d9db9bcb1bb9ee0d5bbc511d":
+  version: 2.19.0-39.c1455d0b443d66b0d9db9bcb1bb9ee0d5bbc511d
+  resolution: "@prisma/engines-version@npm:2.19.0-39.c1455d0b443d66b0d9db9bcb1bb9ee0d5bbc511d"
+  checksum: a813957f56a547b5e5eba801414c9849089fce7f1d0aa9cee373c916002195b87115033d0b3915cd26075c7ffa3be86f8017170978a7a4679385854010aa2cab
+  languageName: node
+  linkType: hard
+
+"@prisma/engines@npm:2.19.0-39.c1455d0b443d66b0d9db9bcb1bb9ee0d5bbc511d":
+  version: 2.19.0-39.c1455d0b443d66b0d9db9bcb1bb9ee0d5bbc511d
+  resolution: "@prisma/engines@npm:2.19.0-39.c1455d0b443d66b0d9db9bcb1bb9ee0d5bbc511d"
+  checksum: c5dc634f388de8cff7bfb877fa0541b9ae366031940152b33f9f9c4f1066baea9f519a07ba13a89a308b219a20b235cf35c163f64a0e7b33b080aab5756ce2a4
+  languageName: node
+  linkType: hard
+
 "@twilens/api@workspace:packages/api":
   version: 0.0.0-use.local
   resolution: "@twilens/api@workspace:packages/api"
   dependencies:
     "@elastic/elasticsearch": ^7.11.0
+    "@prisma/client": ^2.19.0
     "@twilens/types": ^0.0.1
     "@types/node": ^14.14.35
     fastify: ^3.14.0
@@ -2001,7 +2030,9 @@ __metadata:
     fastify-plugin: ^3.0.0
     fastify-sensible: ^3.1.1
     make-promises-safe: ^5.1.0
+    prisma: ^2.19.0
     ts-node: ^9.1.1
+    tsconfig-paths: ^3.9.0
   languageName: unknown
   linkType: soft
 
@@ -11089,6 +11120,18 @@ fsevents@~2.3.1:
   version: 1.1.0
   resolution: "pretty-time@npm:1.1.0"
   checksum: 1467cfb88f0478c277dd4b47419d536f92e417ce17da927390145f9e69ba3ac5c36e54b2a5244538c64e3ed8d299c604117c3018b3a15772c5d030030adbdef6
+  languageName: node
+  linkType: hard
+
+"prisma@npm:^2.19.0":
+  version: 2.19.0
+  resolution: "prisma@npm:2.19.0"
+  dependencies:
+    "@prisma/engines": 2.19.0-39.c1455d0b443d66b0d9db9bcb1bb9ee0d5bbc511d
+  bin:
+    prisma: build/index.js
+    prisma2: build/index.js
+  checksum: 08e997775bb799af247992d2a9c4363281caf02532dcf11585af7a6370bf7c16e789d57438331b9ff3aed2cd7b672425ed869e097a649e03c1a65f13266fa234
   languageName: node
   linkType: hard
 

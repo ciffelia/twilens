@@ -8,6 +8,9 @@ dist
 # Service worker
 sw.*
 
+# Prisma
+/packages/api/prisma/generated-client
+
 # Yarn v2
 /.yarn
 /.yarnrc.yml

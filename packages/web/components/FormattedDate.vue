@@ -3,17 +3,17 @@
 </template>
 
 <script lang="ts">
+import { parseISO, format } from 'date-fns'
 import { Vue, Component, Prop } from 'nuxt-property-decorator'
-import { DateTime } from 'luxon'
 
 @Component
 export default class FormattedDate extends Vue {
-  @Prop({ type: Number, required: true })
-  readonly unixTime!: number
+  @Prop({ type: String, required: true })
+  readonly isoTime!: string
 
   get formattedDate(): string {
-    const dateTime = DateTime.fromSeconds(this.unixTime)
-    return dateTime.toLocaleString(DateTime.DATETIME_SHORT) ?? 'Invalid date'
+    const date = parseISO(this.isoTime)
+    return format(date, 'yyyy/MM/dd HH:mm')
   }
 }
 </script>

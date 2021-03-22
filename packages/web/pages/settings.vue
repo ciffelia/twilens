@@ -7,7 +7,7 @@
         <h2 class="mb-2">Upload tweets</h2>
         <tweets-upload-stepper />
 
-        <h2 class="mt-6 mb-2">Reset data</h2>
+        <h2 class="mt-6 mb-2">Delete tweets</h2>
         <data-reset-form />
       </v-col>
     </v-row>
@@ -16,8 +16,8 @@
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
-import TweetsUploadStepper from '~/components/settings/TweetsUploadStepper.vue'
-import DataResetForm from '~/components/settings/DataResetForm.vue'
+import TweetsUploadStepper from '~/components/settings/TweetUploadStepper.vue'
+import DataResetForm from '~/components/settings/DeleteTweetForm.vue'
 
 @Component({
   components: {

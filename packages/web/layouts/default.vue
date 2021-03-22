@@ -18,7 +18,7 @@
 
     <v-footer app :absolute="true">
       <v-container>
-        <v-row justify="center"> (c) Ciffelia 2020 </v-row>
+        <v-row justify="center"> (c) Ciffelia 2021 </v-row>
         <v-row justify="center">
           Favicon by &nbsp;
           <external-link to="https://twemoji.twitter.com/">
@@ -35,6 +35,7 @@
 </template>
 
 <script lang="ts">
+import 'reflect-metadata'
 import { Vue, Component } from 'nuxt-property-decorator'
 import ExternalLink from '~/components/ExternalLink.vue'
 

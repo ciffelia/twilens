@@ -1,12 +1,14 @@
 import 'make-promises-safe'
-import fastify, { FastifyRequest } from 'fastify'
+import 'reflect-metadata'
+import { PrismaClient } from '$/prisma'
+import fastify from 'fastify'
 import fastifySensible from 'fastify-sensible'
-import fastifyElasticsearch from 'fastify-elasticsearch'
-import { port, elasticsearchNode } from './config'
+import { port } from './config'
 
-import resetRoute from './routes/reset'
+import createRoute from './routes/create'
+import deleteRoute from './routes/delete'
 import searchRoute from './routes/search'
-import uploadRoute from './routes/bulk'
+import statsRoute from './routes/stats'
 
 // eslint-disable-next-line @typescript-eslint/no-floating-promises
 ;(async () => {
@@ -15,25 +17,17 @@ import uploadRoute from './routes/bulk'
     bodyLimit: 104857600 // 100MiB
   })
 
-  await server.register(fastifySensible, {
-    // Prevent Elasticsearch errors being hidden
-    errorHandler: false
+  const prisma = new PrismaClient({
+    log: ['info', 'warn', 'error']
   })
-  await server.register(fastifyElasticsearch, {
-    node: elasticsearchNode
-  })
+  server.decorate('prisma', prisma)
 
-  await server.register(resetRoute)
+  await server.register(fastifySensible)
+
+  await server.register(createRoute)
+  await server.register(deleteRoute)
   await server.register(searchRoute)
-  await server.register(uploadRoute)
-
-  server.addContentTypeParser(
-    'application/x-ndjson',
-    { parseAs: 'string' },
-    async function (request: FastifyRequest, payload: string) {
-      return payload
-    }
-  )
+  await server.register(statsRoute)
 
   await server.listen(port, '0.0.0.0')
 })()

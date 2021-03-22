@@ -2,7 +2,7 @@
   <v-container fill-height>
     <v-row align="center" justify="center">
       <v-col>
-        <search-form v-model="searchQuery" @submit="search" />
+        <search-form v-model="searchOptions.query" @submit="search" />
       </v-col>
     </v-row>
   </v-container>
@@ -10,7 +10,7 @@
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
-import { SearchOptions } from '@twilens/types'
+import { ISearchRequest } from '@twilens/types'
 import SearchForm from '~/components/SearchForm.vue'
 
 @Component({
@@ -19,30 +19,20 @@ import SearchForm from '~/components/SearchForm.vue'
   }
 })
 export default class IndexPage extends Vue {
-  readonly DefaultSearchOptions = {
-    mode: 'exact',
-    user: null,
-    displayOptions: {
-      page: 1,
-      itemsPerPage: 10,
-      sortKey: 'created_at',
-      sortOrder: 'desc'
-    }
-  } as const
-
-  searchQuery: string = ''
+  searchOptions: ISearchRequest = {
+    query: '',
+    user: '',
+    source: '',
+    page: 1,
+    itemsPerPage: 10,
+    sortKey: 'createdAt',
+    sortOrder: 'desc'
+  }
 
   search() {
-    const searchOptions: SearchOptions = {
-      ...this.DefaultSearchOptions,
-      query: this.searchQuery
-    }
-
     this.$router.push({
       path: '/search',
-      query: {
-        q: JSON.stringify(searchOptions)
-      }
+      query: this.searchOptions as any
     })
   }
 }

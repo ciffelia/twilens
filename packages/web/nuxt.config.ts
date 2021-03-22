@@ -5,6 +5,7 @@ const config: NuxtConfig = {
    ** Headers of the page
    */
   head: {
+    title: '',
     titleTemplate: (titleChunk) => {
       // If undefined or blank then we don't need the hyphen
       return titleChunk ? `${titleChunk} - twilens` : 'twilens'

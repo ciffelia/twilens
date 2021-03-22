@@ -1,8 +1,9 @@
 <template>
   <v-container fill-height>
     <v-row justify="center" align="center">
-      <v-alert type="error">
-        {{ message }}
+      <v-alert type="error" prominent>
+        <div class="text-h5">Error {{ error.statusCode }}</div>
+        <pre class="body-1">{{ error.message }}</pre>
       </v-alert>
     </v-row>
   </v-container>
@@ -17,13 +18,9 @@ export default class ErrorPage extends Vue {
   @Prop({ type: Object, required: true })
   readonly error!: NuxtError
 
-  get message(): string {
-    return `Error ${this.error.statusCode}: ${this.error.message}`
-  }
-
   head() {
     return {
-      title: this.message
+      title: `Error ${this.error.statusCode}`
     }
   }
 }

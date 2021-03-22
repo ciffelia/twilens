@@ -2,7 +2,7 @@
   <v-form @submit.stop.prevent>
     <v-text-field
       v-model="screenName"
-      label="screen name"
+      label="screen_name"
       prepend-inner-icon="mdi-at"
       placeholder="twitter"
       hide-details
@@ -35,7 +35,7 @@
 import { Vue, Component } from 'nuxt-property-decorator'
 
 @Component
-export default class TweetsUploadForm extends Vue {
+export default class TweetJsSelectForm extends Vue {
   screenName: string = ''
   tweetJsFile: File | null = null
 
@@ -56,7 +56,7 @@ export default class TweetsUploadForm extends Vue {
       throw new Error('tweet.js file not selected.')
     }
 
-    this.$emit('uploadClicked', this.screenName, this.tweetJsFile)
+    this.$emit('upload-clicked', this.screenName, this.tweetJsFile)
   }
 }
 </script>

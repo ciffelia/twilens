@@ -4,27 +4,20 @@
       Select tweet.js
     </v-stepper-step>
     <v-stepper-content step="1">
-      <tweets-upload-form @uploadClicked="onUploadClicked" />
+      <tweet-js-select-form @upload-clicked="onUploadClicked" />
     </v-stepper-content>
 
     <v-stepper-step :complete="step > 2" step="2">
-      Parse tweet.js
+      Parse and validate
     </v-stepper-step>
     <v-stepper-content step="2">
       <v-progress-linear indeterminate />
     </v-stepper-content>
 
-    <v-stepper-step :complete="step > 3" step="3">
-      Build elasticsearch request
+    <v-stepper-step :complete="complete" step="3">
+      Upload and index
     </v-stepper-step>
     <v-stepper-content step="3">
-      <v-progress-linear indeterminate />
-    </v-stepper-content>
-
-    <v-stepper-step :complete="complete" step="4">
-      Upload and process
-    </v-stepper-step>
-    <v-stepper-content step="4">
       <div v-if="!complete">
         <v-progress-linear :value="uploadedPercent" />
         <span>
@@ -39,15 +32,15 @@
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
+import { classToPlain } from 'class-transformer'
 import { parseTweetJs } from '@twilens/tweetjs-parser'
-import TweetsUploadForm from '~/components/settings/TweetsUploadForm.vue'
+import TweetJsSelectForm from '~/components/settings/TweetJsSelectForm.vue'
 import { sleep } from '~/utils/sleep'
 import { readTextFile } from '~/utils/readTextFile'
-import { buildBulkQuery } from '~/utils/elastic/buildBulkRequest'
 
 @Component({
   components: {
-    TweetsUploadForm
+    TweetJsSelectForm
   }
 })
 export default class TweetsUploadStepper extends Vue {
@@ -66,22 +59,19 @@ export default class TweetsUploadStepper extends Vue {
     // Wait for loading animation
     await sleep(500)
     const tweetJsText = await readTextFile(tweetJsFile)
-    const tweetList = parseTweetJs(tweetJsText, screenName)
+    const tweets = await parseTweetJs(tweetJsText, screenName)
 
     this.step = 3
-    await sleep(500)
-    const bulkQueryList = buildBulkQuery(tweetList)
+    this.numChunks = Math.ceil(tweets.length / 500)
+    for (let i = 0; i < tweets.length; i += 500) {
+      const tweetChunk = tweets.slice(i, i + 500)
 
-    this.step = 4
-    this.numChunks = bulkQueryList.length
-    for (const bulkQuery of bulkQueryList) {
-      await this.$axios.post('/bulk', bulkQuery, {
-        headers: {
-          'content-type': 'application/x-ndjson'
-        },
-        // @ts-ignore
-        progress: false
-      })
+      await this.$axios.post(
+        '/create',
+        { tweets: classToPlain(tweetChunk) },
+        { progress: false }
+      )
+
       this.uploadedChunks++
     }
 

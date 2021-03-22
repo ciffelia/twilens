@@ -23,6 +23,7 @@ jobs:
           node-version: 14
           check-latest: true
       - run: yarn install --immutable
+      - run: yarn run build
       - run: yarn run lint
 
   build-and-push-docker:

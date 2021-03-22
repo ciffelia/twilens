@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="mt-3">
     <v-row>
       <v-col>
         <search-form
@@ -10,15 +10,16 @@
     </v-row>
     <v-row>
       <v-col>
-        <search-mode-select
-          v-model="searchOptions.mode"
+        <user-select
+          v-model="searchOptions.user"
+          :users="userList"
           @input="applySearchOptionsChange"
         />
       </v-col>
       <v-col>
-        <user-select
-          v-model="searchOptions.user"
-          :users="userList"
+        <source-select
+          v-model="searchOptions.source"
+          :sources="sourceList"
           @input="applySearchOptionsChange"
         />
       </v-col>
@@ -26,9 +27,9 @@
     <v-row>
       <v-col>
         <tweets-table
-          :display-options.sync="searchOptions.displayOptions"
-          :search-result="searchResult"
-          @update:displayOptions="applySearchOptionsChange"
+          :search-options.sync="searchOptions"
+          :search-response="searchResponse"
+          @update:search-options="applySearchOptionsChange"
         />
       </v-col>
     </v-row>
@@ -38,29 +39,33 @@
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
 import { Context } from '@nuxt/types'
-import { SearchOptions, SearchResult } from '@twilens/types'
-import { buildSearchQuery } from '~/utils/elastic/buildSearchQuery'
-import { buildListQuery } from '~/utils/elastic/buildListQuery'
-import { parseSearchResult } from '~/utils/elastic/parseSearchResult'
-import { parseListResult } from '~/utils/elastic/parseListResult'
+import { classToPlain, plainToClass } from 'class-transformer'
+import { validateOrReject } from 'class-validator'
+import {
+  ISearchRequest,
+  ISearchResponse,
+  SearchRequest,
+  IStats
+} from '@twilens/types'
 import SearchForm from '~/components/SearchForm.vue'
-import SearchModeSelect from '~/components/search/SearchModeSelect.vue'
 import UserSelect from '~/components/search/UserSelect.vue'
+import SourceSelect from '~/components/search/SourceSelect.vue'
 import TweetsTable from '~/components/search/TweetsTable.vue'
 
 @Component({
   components: {
     SearchForm,
-    SearchModeSelect,
     UserSelect,
+    SourceSelect,
     TweetsTable
   },
-  watchQuery: ['q']
+  watchQuery: true
 })
 export default class SearchPage extends Vue {
-  searchOptions: SearchOptions = {} as any
-  searchResult: SearchResult = {} as any
+  searchOptions: ISearchRequest = {} as any
+  searchResponse: ISearchResponse = {} as any
   userList: string[] = []
+  sourceList: string[] = []
 
   head() {
     return {
@@ -71,27 +76,37 @@ export default class SearchPage extends Vue {
   applySearchOptionsChange() {
     this.$router.push({
       path: '/search',
-      query: {
-        q: JSON.stringify(this.searchOptions)
-      }
+      query: classToPlain(this.searchOptions)
     })
   }
 
   async asyncData({ $axios, query }: Context) {
-    const searchOptions = JSON.parse(query.q as string) as SearchOptions
+    const classSearchOptions = plainToClass(SearchRequest, query, {
+      excludeExtraneousValues: true
+    })
 
-    const searchBody = buildSearchQuery(searchOptions)
-    const { data: rawSearchResult } = await $axios.post('/search', searchBody)
-    const searchResult = parseSearchResult(rawSearchResult)
+    await validateOrReject(classSearchOptions, {
+      forbidUnknownValues: true
+    })
 
-    const userListQuery = buildListQuery('user')
-    const { data: rawListResult } = await $axios.post('/search', userListQuery)
-    const userList = parseListResult(rawListResult)
+    const searchOptions = classToPlain(classSearchOptions) as ISearchRequest
+
+    const { data: searchResponse } = await $axios.get<ISearchResponse>(
+      '/search',
+      {
+        params: searchOptions
+      }
+    )
+
+    const { data: stats } = await $axios.get<IStats>('/stats')
+    const userList = stats.users.map((user) => user.name)
+    const sourceList = stats.sources.map((source) => source.name)
 
     return {
       searchOptions,
-      searchResult,
-      userList
+      searchResponse,
+      userList,
+      sourceList
     }
   }
 }

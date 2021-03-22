@@ -15,6 +15,9 @@
     /* Module Resolution Options */
     "esModuleInterop": true,
 
+    /* Experimental Options */
+    "experimentalDecorators": true,
+
     /* Advanced Options */
     "forceConsistentCasingInFileNames": true
   },

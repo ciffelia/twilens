@@ -15,16 +15,17 @@
   "dependencies": {
     "@prisma/client": "^2.19.0",
     "@twilens/types": "^0.0.1",
+    "class-transformer": "^0.4.0",
+    "class-validator": "^0.13.1",
     "fastify": "^3.14.0",
-    "fastify-elasticsearch": "^2.0.0",
     "fastify-plugin": "^3.0.0",
     "fastify-sensible": "^3.1.1",
     "make-promises-safe": "^5.1.0",
+    "reflect-metadata": "^0.1.13",
     "ts-node": "^9.1.1",
     "tsconfig-paths": "^3.9.0"
   },
   "devDependencies": {
-    "@elastic/elasticsearch": "^7.11.0",
     "@types/node": "^14.14.35",
     "prisma": "^2.19.0"
   }

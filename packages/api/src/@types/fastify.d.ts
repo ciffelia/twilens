@@ -1,7 +1,7 @@
-import { Client } from '@elastic/elasticsearch'
+import { PrismaClient } from '$/prisma'
 
 declare module 'fastify' {
   interface FastifyInstance {
-    elastic: Client
+    prisma: PrismaClient
   }
 }

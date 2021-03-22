@@ -8,12 +8,15 @@
   "homepage": "https://github.com/ciffelia/twilens#readme",
   "bugs": "https://github.com/ciffelia/twilens/issues",
   "scripts": {
+    "dev": "yarn g:tsc --watch",
     "build": "yarn g:tsc"
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "dependencies": {
     "@twilens/types": "^0.0.1",
-    "moment": "^2.29.1"
+    "class-transformer": "^0.4.0",
+    "class-validator": "^0.13.1",
+    "date-fns": "^2.19.0"
   }
 }

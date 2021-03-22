@@ -1,4 +1,6 @@
-const extractShortenedUrl = (text: string, entities: any): string => {
+import { Entities } from './Entities'
+
+const expandShortenedUrl = (text: string, entities: Entities): string => {
   let extractedText = text
 
   const entityList = [...entities.urls, ...(entities.media ?? [])]
@@ -9,4 +11,4 @@ const extractShortenedUrl = (text: string, entities: any): string => {
   return extractedText
 }
 
-export { extractShortenedUrl }
+export { expandShortenedUrl }

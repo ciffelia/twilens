@@ -1,6 +1,7 @@
 generator client {
-  provider = "prisma-client-js"
-  output   = "./generated-client"
+  provider        = "prisma-client-js"
+  previewFeatures = ["groupBy"]
+  output          = "./generated-client"
 }
 
 datasource db {
@@ -16,4 +17,11 @@ model Tweet {
   source    String
   retweets  Int
   likes     Int
+
+  @@index([user])
+  @@index([createdAt])
+  @@index([text])
+  @@index([source])
+  @@index([retweets])
+  @@index([likes])
 }

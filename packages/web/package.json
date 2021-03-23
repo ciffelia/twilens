@@ -1,7 +1,6 @@
 {
   "name": "@twilens/web",
   "private": true,
-  "version": "0.0.1",
   "description": "Web front-end of twilens.",
   "author": "Ciffelia <mc.prince.0203@gmail.com> (https://ciffelia.com/)",
   "repository": "github:ciffelia/twilens",
@@ -15,8 +14,8 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.13.1",
     "@nuxtjs/proxy": "^2.1.0",
-    "@twilens/tweetjs-parser": "^0.0.1",
-    "@twilens/types": "^0.0.1",
+    "@twilens/tweetjs-parser": "workspace:*",
+    "@twilens/types": "workspace:*",
     "class-transformer": "^0.4.0",
     "class-validator": "^0.13.1",
     "date-fns": "^2.19.0",

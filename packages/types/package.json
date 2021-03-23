@@ -1,7 +1,6 @@
 {
   "name": "@twilens/types",
   "private": true,
-  "version": "0.0.1",
   "description": "TypeScript interfaces for twilens",
   "author": "Ciffelia <mc.prince.0203@gmail.com> (https://ciffelia.com/)",
   "repository": "github:ciffelia/twilens",

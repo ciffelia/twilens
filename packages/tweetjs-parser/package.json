@@ -1,7 +1,6 @@
 {
   "name": "@twilens/tweetjs-parser",
   "private": true,
-  "version": "0.0.1",
   "description": "Parse tweet.js.",
   "author": "Ciffelia <mc.prince.0203@gmail.com> (https://ciffelia.com/)",
   "repository": "github:ciffelia/twilens",
@@ -14,7 +13,7 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "dependencies": {
-    "@twilens/types": "^0.0.1",
+    "@twilens/types": "workspace:*",
     "class-transformer": "^0.4.0",
     "class-validator": "^0.13.1",
     "date-fns": "^2.19.0"

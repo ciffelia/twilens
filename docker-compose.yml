@@ -2,28 +2,45 @@ version: '3.7'
 
 services:
   api:
-    image: docker.pkg.github.com/ciffelia/twilens/api
-    build:
-      context: .
-      dockerfile: ./dockerfile/api.dockerfile
-      cache_from:
-        - docker.pkg.github.com/ciffelia/twilens/api
-        - docker.pkg.github.com/ciffelia/twilens/web
+    image: ciffelia/twilens
+    build: .
+    depends_on:
+      - db
+    command: start:api
     init: true
     environment:
       PORT: 8080
+      DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
     expose:
       - 8080
+    networks:
+      - api
+      - db
 
   web:
-    image: docker.pkg.github.com/ciffelia/twilens/web
-    build:
-      context: .
-      dockerfile: ./dockerfile/web.dockerfile
-      cache_from:
-        - docker.pkg.github.com/ciffelia/twilens/web
-        - docker.pkg.github.com/ciffelia/twilens/api
+    image: ciffelia/twilens
+    build: .
+    depends_on:
+      - api
+    command: start:web
     init: true
     environment:
       PORT: 3000
       TWILENS_API_BASE_URL: http://api:8080
+    networks:
+      - api
+
+  db:
+    image: groonga/pgroonga:2.2.7-alpine-13-slim
+    environment:
+      POSTGRES_DB:
+      POSTGRES_USER:
+      POSTGRES_PASSWORD:
+    expose:
+      - 5432
+    networks:
+      - db
+
+networks:
+  api:
+  db:

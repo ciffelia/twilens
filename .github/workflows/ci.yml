@@ -26,25 +26,8 @@ jobs:
       - run: yarn run build
       - run: yarn run lint
 
-  build-and-push-docker:
+  build-docker:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
-
-      - name: Login to GitHub Packages
-        if: github.ref == 'refs/heads/master'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: echo "${GITHUB_TOKEN}" | docker login docker.pkg.github.com --username ciffelia --password-stdin
-
-      - name: Pull build cache
-        if: github.ref == 'refs/heads/master'
-        continue-on-error: true
-        run: docker-compose pull --quiet
-
-      - name: Build docker images
-        run: docker-compose build
-
-      - name: Push Docker images
-        if: github.ref == 'refs/heads/master'
-        run: docker-compose push
+      - run: docker build -t ciffelia/twilens .

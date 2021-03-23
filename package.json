@@ -11,6 +11,8 @@
   ],
   "scripts": {
     "build": "yarn workspaces foreach --verbose --parallel --topological-dev run build",
+    "start:api": "yarn workspace @twilens/api start",
+    "start:web": "yarn workspace @twilens/web start",
     "lint": "run-p --print-name --aggregate-output lint:eslint lint:prettier",
     "lint:eslint": "eslint --ext .js,.ts,.vue .",
     "lint:prettier": "prettier --check .",

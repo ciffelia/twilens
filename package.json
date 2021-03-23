@@ -11,10 +11,10 @@
   ],
   "scripts": {
     "build": "yarn workspaces foreach --verbose --parallel --topological-dev run build",
-    "lint": "run-p --aggregate-output lint:eslint lint:prettier",
+    "lint": "run-p --print-name --aggregate-output lint:eslint lint:prettier",
     "lint:eslint": "eslint --ext .js,.ts,.vue .",
     "lint:prettier": "prettier --check .",
-    "fix": "run-s fix:eslint fix:prettier",
+    "fix": "run-s --print-name fix:eslint fix:prettier",
     "fix:eslint": "eslint --fix --ext .js,.ts,.vue .",
     "fix:prettier": "prettier --write .",
     "postinstall": "husky install",

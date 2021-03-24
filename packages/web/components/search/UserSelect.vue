@@ -1,7 +1,7 @@
 <template>
   <v-select
     prepend-inner-icon="mdi-account-outline"
-    label="User"
+    label="Account"
     hide-details
     :items="items"
     :value="value"

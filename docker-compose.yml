@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   api:
-    image: ciffelia/twilens
+    image: ghcr.io/ciffelia/twilens
     build: .
     depends_on:
       - db
@@ -18,7 +18,7 @@ services:
       - db
 
   web:
-    image: ciffelia/twilens
+    image: ghcr.io/ciffelia/twilens
     build: .
     depends_on:
       - api

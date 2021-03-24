@@ -7,6 +7,9 @@
         </nuxt-link>
       </v-toolbar-title>
       <v-spacer />
+      <v-btn icon nuxt to="/stats">
+        <v-icon>mdi-poll-box</v-icon>
+      </v-btn>
       <v-btn icon nuxt to="/settings">
         <v-icon>mdi-cog</v-icon>
       </v-btn>

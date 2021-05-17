@@ -31,4 +31,4 @@ Node.js with TypeScriptのREST APIサーバーです。フレームワークに�
 
 ### 検索サーバー
 PostgreSQL + PGroongaを採用しています。  
-以前はElasticsearch + Sudachiを使用していましたが、メモリ消費が多いため、限られたリソースでの運用が困難でした。
+以前はElasticsearch + Sudachiを使用していましたが、負荷が大きく限られたリソースでの運用が困難だったため、現在の構成に移行しました。

@@ -6,7 +6,6 @@
   Full-text search for your tweets.
 </p>
 
-
 <p align="center">
   <a href="https://github.com/ciffelia/twilens/actions?query=workflow%3ACI+branch%3Amaster"><img src="https://github.com/ciffelia/twilens/workflows/CI/badge.svg?branch=master" alt="CI Status"></a>
 </p>
@@ -18,17 +17,21 @@
 
 ---
 
-Twitter投稿を全文検索できるツールです。形態素解析とn-gramを併用したインデックスにより、従来のTwitter検索では見つかりづらかった日本語ツイートも高精度で検出できます。
+Twitter 投稿を全文検索できるツールです。形態素解析と n-gram を併用したインデックスにより、従来の Twitter 検索では見つかりづらかった日本語ツイートも高精度で検出できます。
 
 ## 構成
-Yarn v2を使ったmonorepoです。運用はdocker-composeで管理しています。
+
+Yarn v2 を使った monorepo です。運用は docker-compose で管理しています。
 
 ### [フロントエンド](packages/web)
-Nuxt.js with TypeScriptのSPAです。
 
-### [APIサーバー](packages/api)
-Node.js with TypeScriptのREST APIサーバーです。フレームワークにはFastify、ORMにはPrismaを採用しています。
+Nuxt.js with TypeScript の SPA です。
+
+### [API サーバー](packages/api)
+
+Node.js with TypeScript の REST API サーバーです。フレームワークには Fastify、ORM には Prisma を採用しています。
 
 ### 検索サーバー
-PostgreSQL + PGroongaを採用しています。  
-以前はElasticsearch + Sudachiを使用していましたが、負荷が大きく限られたリソースでの運用が困難だったため、現在の構成に移行しました。
+
+PostgreSQL + PGroonga を採用しています。  
+以前は Elasticsearch + Sudachi を使用していましたが、負荷が大きく限られたリソースでの運用が困難だったため、現在の構成に移行しました。

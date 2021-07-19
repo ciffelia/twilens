@@ -7,7 +7,6 @@ const config: NuxtConfig = {
   head: {
     title: '',
     titleTemplate: (titleChunk) => {
-      // If undefined or blank then we don't need the hyphen
       return titleChunk ? `${titleChunk} - twilens` : 'twilens'
     },
     meta: [{ name: 'robots', content: 'noindex,nofollow' }],
@@ -24,21 +23,6 @@ const config: NuxtConfig = {
       description: '🔍 Full-text search for your tweets'
     }
   },
-
-  /*
-   ** Customize the progress-bar color
-   */
-  // loading: { color: '#fff' },
-
-  /*
-   ** Global CSS
-   */
-  css: [],
-
-  /*
-   ** Plugins to load before mounting the App
-   */
-  plugins: [],
 
   /*
    ** Nuxt.js dev-modules
@@ -69,32 +53,19 @@ const config: NuxtConfig = {
   },
 
   /*
-   ** vuetify module configuration
+   ** Vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module
    */
   vuetify: {
-    // theme: {
-    //   dark: true
-    // },
     defaultAssets: {
       /*
-       ** Font settings are applies only on production.
+       ** Font settings are applied only on production.
        ** https://github.com/nuxt-community/vuetify-module#defaultassets
        */
       font: {
         family: 'Noto Sans JP'
       }
     }
-  },
-
-  /*
-   ** Build configuration
-   */
-  build: {
-    /*
-     ** You can extend webpack config here
-     */
-    extend(_config, _ctx) {}
   }
 }
 

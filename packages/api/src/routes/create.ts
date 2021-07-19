@@ -20,14 +20,9 @@ const pluginCallback: FastifyPluginCallback = (server, options, next) => {
       return
     }
 
-    await Promise.all(
-      createRequest.tweets.map(async (tweet) => {
-        await server.prisma.tweet.create({
-          data: tweet,
-          select: null
-        })
-      })
-    )
+    await server.prisma.tweet.createMany({
+      data: createRequest.tweets
+    })
 
     await reply.send()
   })

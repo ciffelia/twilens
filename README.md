@@ -11,27 +11,32 @@
 </p>
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/15273128/118421000-1d53a680-b6fb-11eb-878f-28d02d143410.png" alt="検索画面" width="400" />
-  <img src="https://user-images.githubusercontent.com/15273128/118421009-217fc400-b6fb-11eb-9b79-c59be706b7eb.png" alt="設定画面" width="400" />
+  <img src="https://user-images.githubusercontent.com/15273128/118421000-1d53a680-b6fb-11eb-878f-28d02d143410.png" alt="Search page" width="400" />
+  <img src="https://user-images.githubusercontent.com/15273128/118421009-217fc400-b6fb-11eb-9b79-c59be706b7eb.png" alt="Settings page" width="400" />
 </p>
 
 ---
 
-Twitter 投稿を全文検索できるツールです。形態素解析と n-gram を併用したインデックスにより、従来の Twitter 検索では見つかりづらかった日本語ツイートも高精度で検出できます。
+twilens is a self-hosted web app to perform a full-text searches for your tweets. Its morphological and n-gram index allows you to detect tweets written in Japanese language, which are difficult to find on twitter.com search.
 
-## 構成
+Twitter 投稿を全文検索できるツールです。形態素解析と n-gram を併用したインデックスにより、従来の Twitter 検索では見つかりづらかった日本語ツイートも高精度で発見できます。
 
-Yarn v2 を使った monorepo です。運用は docker-compose で管理しています。
+## Usage
 
-### [フロントエンド](packages/web)
+Currently not available.
 
-Nuxt.js with TypeScript の SPA です。
+## Architecture
 
-### [API サーバー](packages/api)
+Monorepo with Yarn (berry).
 
-Node.js with TypeScript の REST API サーバーです。フレームワークには Fastify、ORM には Prisma を採用しています。
+### [Front-end](packages/web)
 
-### 検索サーバー
+Single page application built with Nuxt.js and TypeScript.
 
-PostgreSQL + PGroonga を採用しています。  
-以前は Elasticsearch + Sudachi を使用していましたが、負荷が大きく限られたリソースでの運用が困難だったため、現在の構成に移行しました。
+### [REST API server](packages/api)
+
+REST API server built with Node.js and TypeScript. Uses Fastify and Prisma under the hood.
+
+### Search back-end
+
+PostgreSQL server with PGroonga extension.

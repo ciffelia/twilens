@@ -1,5 +1,5 @@
 const unescapeTweetText = (text: string): string => {
-  return text.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+  return text.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&')
 }
 
 export { unescapeTweetText }

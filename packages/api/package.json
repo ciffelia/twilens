@@ -14,11 +14,11 @@
     "start:app": "TS_NODE_FILES=true TS_NODE_TRANSPILE_ONLY=true node -r ts-node/register -r tsconfig-paths/register src/index.ts"
   },
   "dependencies": {
-    "@prisma/client": "^2.27.0",
+    "@prisma/client": "^2.28.0",
     "@twilens/types": "workspace:*",
     "class-transformer": "^0.4.0",
     "class-validator": "^0.13.1",
-    "fastify": "^3.19.1",
+    "fastify": "^3.20.1",
     "fastify-plugin": "^3.0.0",
     "fastify-sensible": "^3.1.1",
     "make-promises-safe": "^5.1.0",
@@ -28,7 +28,7 @@
     "tsconfig-paths": "^3.10.1"
   },
   "devDependencies": {
-    "@types/node": "^14.17.5",
-    "prisma": "^2.27.0"
+    "@types/node": "^14.17.9",
+    "prisma": "^2.28.0"
   }
 }

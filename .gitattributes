@@ -1,5 +1,3 @@
-# Hide .yarn from GitHub's language detection
-/.yarn/** linguist-vendored
-
-# Mark .pnp.cjs as binary to prevent git from trying to merge it
+# Mark files as binary to prevent git from trying to merge it
+/.yarn/** binary linguist-vendored
 /.pnp.* binary linguist-generated

@@ -1,24 +1,18 @@
 {
   "compilerOptions": {
-    /* Basic Options */
-    "target": "es2018",
-    "module": "commonjs",
-    "lib": ["esnext"],
+    "target": "ES2020",
+    "module": "CommonJS",
+    "lib": ["ES2020"],
+
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
     "outDir": "./dist",
 
-    /* Strict Type-Checking Options */
     "strict": true,
 
-    /* Module Resolution Options */
     "esModuleInterop": true,
-
-    /* Experimental Options */
     "experimentalDecorators": true,
-
-    /* Advanced Options */
     "forceConsistentCasingInFileNames": true
   },
 

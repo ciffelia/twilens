@@ -4,9 +4,7 @@
     "target": "es2020",
     "module": "commonjs",
     "lib": ["es2020"],
-    "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
+    "noEmit": true,
 
     /* Strict Type-Checking Options */
     "strict": true,
@@ -23,5 +21,9 @@
     }
   },
 
-  "include": ["./src/**/*"]
+  "include": ["./src/**/*"],
+
+  "ts-node": {
+    "files": true
+  }
 }

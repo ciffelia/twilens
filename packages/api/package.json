@@ -8,10 +8,12 @@
   "bugs": "https://github.com/ciffelia/twilens/issues",
   "scripts": {
     "dev": "TS_NODE_FILES=true node -r ts-node/register -r tsconfig-paths/register src/index.ts",
-    "build": "prisma generate && yarn g:tsc --noEmit",
+    "build": "run-s --print-name build:prisma build:typescript",
+    "build:prisma": "prisma generate",
+    "build:typescript": "yarn g:tsc",
     "start": "run-s --print-name start:migrate start:app",
     "start:migrate": "prisma migrate deploy",
-    "start:app": "TS_NODE_FILES=true TS_NODE_TRANSPILE_ONLY=true node -r ts-node/register -r tsconfig-paths/register src/index.ts"
+    "start:app": "TS_NODE_TRANSPILE_ONLY=true node -r ts-node/register -r tsconfig-paths/register src/index.ts"
   },
   "dependencies": {
     "@prisma/client": "^2.28.0",

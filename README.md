@@ -17,7 +17,7 @@
 
 ---
 
-twilens is a self-hosted web app to perform a full-text searches for your tweets. Its morphological and n-gram index allows you to detect tweets written in Japanese language, which are difficult to find on twitter.com search.
+twilens is a self-hosted web app to perform full-text searches for your tweets. Its morphological and n-gram index allows you to detect tweets written in Japanese language, which are difficult to find on twitter.com search.
 
 Twitter 投稿を全文検索できるツールです。形態素解析と n-gram を併用したインデックスにより、従来の Twitter 検索では見つかりづらかった日本語ツイートも高精度で発見できます。
 
